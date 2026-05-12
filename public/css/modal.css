@@ -1,0 +1,88 @@
+.card-modal-edit,
+.card-modal-add {
+    padding: 18px 20px;
+    background: #f2f4f7df;
+    border-radius: 18px;
+}
+
+.modal-edit .modal-content,
+.modal-add .modal-content {
+    border-radius: 18px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+}
+
+.modal-edit .modal-header,
+.modal-add .modal-header,
+.modal-validasi .modal-header {
+    padding: 16px 20px;
+    border-bottom: none;
+    background: #2c3e50; /* fallback */
+    background: -webkit-linear-gradient(to right, #243447, #2e6f9e);
+    background: linear-gradient(to right, #243447, #2e6f9e);
+}
+
+.modal-edit .modal-title,
+.modal-add .modal-title {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+.modal-edit .modal-header .close,
+.modal-add .modal-header .close {
+    font-size: 22px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.modal-edit .modal-body,
+.modal-add .modal-body,
+.modal-import .modal-body,
+.modal-add-data-detail .modal-body {
+    padding: 20px;
+    background: #f8fafc;
+}
+
+.modal-edit .form-group,
+.modal-add .form-group {
+    margin-bottom: 14px;
+}
+
+.modal-edit .col-form-label,
+.modal-add .col-form-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    letter-spacing: 0.4px;
+}
+
+.modal-edit .form-control,
+.modal-add .form-control {
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 13px;
+    padding: 10px 12px;
+    transition: 0.2s;
+}
+
+.modal-edit .form-control:focus,
+.modal-add .form-control:focus {
+    border-color: #4f55e5;
+    box-shadow: 0 0 0 3px rgba(79, 85, 229, 0.15);
+}
+
+.modal-edit .modal-footer,
+.modal-add .modal-footer {
+    border-top: none;
+    padding: 0px 24px 14px;
+    background: #f8fafc;
+}
+
+.modal-edit .modal-title i,
+.modal-add .modal-title i,
+.modal-import .modal-title i,
+.modal-add-data-detail .modal-title i {
+    margin-right: 13px;
+}

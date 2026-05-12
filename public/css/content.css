@@ -1,0 +1,69 @@
+.page-header {
+    position: relative;
+    padding: 22px 26px;
+    border-radius: 22px;
+    /* border: 1.55px solid #dce3e9; */
+    overflow: hidden;
+    transition: transform 0.35s ease;
+    /* box-shadow:
+        0 3.5px 4px rgba(224, 224, 224, 0.8),
+        0 1.5px 2px rgb(224, 224, 224, 0.8); */
+}
+
+.page-header:hover {
+    transform: translateY(-5px) scale(1.01);
+}
+
+.page-header .row {
+    position: relative;
+    z-index: 2;
+}
+
+.page-header .title h4 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #0f172a;
+    margin: 0;
+}
+
+.page-header .breadcrumb {
+    background: transparent;
+    padding: 0;
+    margin-top: 6px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
+.page-header .breadcrumb-item a {
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    transition: 0.25s ease;
+}
+
+.page-header .breadcrumb-item a:hover {
+    color: #3d6497;
+    transform: translateX(2px);
+}
+
+.page-header .breadcrumb-item.active {
+    color: #406a9a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.page-header .text-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-box {
+    padding: 25px 25px !important;
+    margin-bottom: 25px;
+    border-radius: 22px !important;
+    border: none;
+}

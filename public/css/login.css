@@ -1,0 +1,200 @@
+/* ===== LOGIN CARD ===== */
+.login-box {
+    border-radius: 28px;
+    padding: 38px;
+
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(25px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.06),
+        0 8px 20px rgba(0, 0, 0, 0.04);
+
+    transition: all 0.35s ease;
+}
+
+.login-box:hover {
+    transform: translateY(-4px);
+}
+
+/* ===== TITLE ===== */
+.login-title h2 {
+    font-weight: 700;
+    font-size: 22px;
+    color: #3668a9;
+}
+
+.login-title p {
+    font-size: 13px;
+}
+
+/* ===== INPUT ===== */
+.input-group.custom {
+    margin-bottom: 18px;
+}
+
+.input-group.custom input {
+    border-radius: 16px;
+    height: 50px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    padding-left: 15px;
+
+    transition: all 0.25s ease;
+}
+
+/* focus glow */
+.input-group.custom input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.12);
+}
+
+/* ICON */
+.input-group-text {
+    border-radius: 16px;
+    background: #f3f4f6;
+    border: none;
+}
+
+.btn-universal {
+    padding: 23px;
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12),
+        0 8px 20px rgba(41, 128, 185, 0.25);
+}
+
+.btn-universal:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(41, 128, 185, 0.35);
+}
+
+/* ===== CHECKBOX ===== */
+.custom-control-label {
+    font-size: 13px;
+}
+
+/* ===== ALERT ===== */
+.alert {
+    border-radius: 14px;
+    font-size: 13px;
+}
+
+/* ===== ANIMATION ===== */
+.login-box {
+    animation: fadeUp 0.7s ease;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== LEFT PANEL ===== */
+.left-panel {
+    padding: 60px 0px 60px 250px;
+}
+
+.title {
+    font-size: 39px;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.3;
+    letter-spacing: 0.4px;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    color: #64748b;
+    max-width: 400px;
+}
+
+/* aksen glow biar modern */
+.left-panel::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #6366f1;
+    filter: blur(120px);
+    opacity: 0.15;
+    top: 50px;
+    left: 50px;
+    z-index: -1;
+}
+
+.login-wrap {
+    /* height: 100vh; */
+    display: flex;
+    align-items: flex-start;
+    padding-top: 20vh;
+    /* auto adapt layar */
+}
+
+.container-fluid {
+    height: 100%;
+    margin: 0;
+}
+
+html,
+body {
+    min-height: 100%;
+    /* overflow-y: hidden; */
+    /* cuma hilangin scroll samping */
+}
+
+.left-panel {
+    padding: 60px 40px 60px 120px;
+    /* kurangi jarak kanan */
+}
+
+.login-box {
+    margin-left: -30px;
+    /* tarik login mendekat */
+}
+
+@media (max-width: 768px) {
+    .left-panel {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .login-wrap {
+        height: auto;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    body {
+        overflow-y: auto;
+        /* aktifin scroll */
+    }
+
+    .login-box {
+        margin-left: 26px !important;
+        margin-right: 26px !important;
+    }
+
+    .container-fluid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

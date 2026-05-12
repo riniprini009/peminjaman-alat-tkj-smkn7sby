@@ -1,0 +1,170 @@
+/* ===================BUTTON=======================*/
+.btn-universal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 36px!important;
+    padding: 0 14px;
+
+    border-radius: 12px;
+    border: none;
+
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+    background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #2c3e50,
+        #2980b9
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #2980b9);
+}
+
+.btn-universal i {
+    width: 22px;
+    height: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-size: 13px;
+    font-weight: 900;
+
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-universal::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -30%;
+
+    width: 160%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.45),
+        transparent 70%
+    );
+
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.btn-universal:hover::before {
+    left: 120%;
+    opacity: 1;
+}
+
+.btn-universal:hover {
+    transform: translateY(-2px) scale(1.02);
+    color: black;
+}
+
+.btn-universal:active {
+    transform: scale(0.96);
+}
+
+.btn-universal-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 36px;
+    padding: 0 14px;
+
+    border-radius: 12px;
+    border: none;
+
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+
+  background: #2980b9; /* fallback */
+
+background: -webkit-linear-gradient(
+    to right,
+    #2980b9,
+    #2c3e50
+);
+
+background: linear-gradient(
+    to right,
+    #2980b9,
+    #2c3e50
+);
+}
+
+.btn-universal-back i {
+    width: 22px;
+    height: 22px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    font-size: 13px;
+    font-weight: 900;
+
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn-universal-back::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -30%;
+
+    width: 160%;
+    height: 200%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.45),
+        transparent 70%
+    );
+
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.btn-universal-back:hover::before {
+    left: 120%;
+    opacity: 1;
+}
+
+.btn-universal-back:hover {
+    transform: translateY(-2px) scale(1.02);
+    color: black;
+}
+
+.btn-universal-back:active {
+    transform: scale(0.96);
+}

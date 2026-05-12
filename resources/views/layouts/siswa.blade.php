@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>@yield('title')</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('deskap/vendors/images/apple-touch-icon.png') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('deskap/vendors/images/favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('deskap/vendors/images/favicon-16x16.png') }}" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('deskap/vendors/styles/core.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('deskap/vendors/styles/icon-font.min.css') }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ asset('deskap/src/plugins/datatables/css/dataTables.bootstrap4.min.css') }}" />
+    <link rel="stylesheet"
+        type="text/css"href="{{ asset('deskap/src/plugins/datatables/css/responsive.bootstrap4.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('deskap/vendors/styles/style.css') }}" />
+    @yield('link')
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBZ3SGGX85"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2973766580778258"
+        crossorigin="anonymous"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-GBZ3SGGX85");
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                "gtm.start": new Date().getTime(),
+                event: "gtm.js"
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != "dataLayer" ? "&l=" + l : "";
+            j.async = true;
+            j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-NXZMQSS");
+    </script>
+</head>
+
+<body>
+    {{-- <div class="pre-loader">
+        <div class="pre-loader-box">
+            <div class="loader-logo">
+                <img src="{{ asset('deskap/vendors/images/deskapp-logo.svg') }}" alt="" />
+            </div>
+            <div class="loader-progress" id="progress_div">
+                <div class="bar" id="bar1"></div>
+            </div>
+            <div class="percent" id="percent1">0%</div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div> --}}
+
+    <div class="header">
+        <div class="header-left">
+            <div class="menu-icon bi bi-list"></div>
+            <div class="search-toggle-icon bi bi-search" data-toggle="header_search"></div>
+            <div class="header-search">
+                <form>
+                    <div class="form-group mb-0">
+                        <i class="dw dw-search2 search-icon"></i>
+                        <input type="text" class="form-control search-input" placeholder="Search Here" />
+                        <div class="dropdown">
+                            <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+                                <i class="ion-arrow-down-c"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">From</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <input class="form-control form-control-sm form-control-line" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">To</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <input class="form-control form-control-sm form-control-line" type="text" />
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-sm-12 col-md-2 col-form-label">Subject</label>
+                                    <div class="col-sm-12 col-md-10">
+                                        <input class="form-control form-control-sm form-control-line" type="text" />
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <button class="btn btn-primary">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="header-right">
+
+            {{-- <div class="user-notification">
+                <div class="dropdown">
+                    <a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+                        <i class="icon-copy dw dw-notification"></i>
+                        <span class="badge notification-active"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <div class="notification-list mx-h-350 customscroll">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('deskap/vendors/images/img.jpg') }}" alt="" />
+                                        <h3>John Doe</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed...
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('deskap/vendors/images/photo1.jpg') }}" alt="" />
+                                        <h3>Lea R. Frith</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed...
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="{{ asset('deskap/vendors/images/photo2.jpg') }}" alt="" />
+                                        <h3>Erik L. Richards</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed...
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="vendors/images/photo3.jpg" alt="" />
+                                        <h3>John Doe</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed...
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="vendors/images/photo4.jpg" alt="" />
+                                        <h3>Renee I. Hansen</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed...
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="vendors/images/img.jpg" alt="" />
+                                        <h3>Vicki M. Coleman</h3>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed...
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+            <div class="user-info-dropdown">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                        <span class="user-icon">
+                            <img src="{{ asset('user.png') }}" alt="" />
+                        </span>
+                        <span class="user-name" style="font-weight: 700;">
+                            Hi,
+                            {{ implode(' ', array_slice(explode(' ', ucwords(Auth::user()->siswa->nama_siswa)), 0, 2)) }}
+                            👋
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                        <a class="dropdown-item" href="{{ route('profile.index') }}"><i class="dw dw-user1"></i>
+                            Profile</a>
+
+                        <form action="{{ route('logout') }}" method="POST">
+                            @csrf
+                            <button type="submit" class="dropdown-item border-0 bg-transparent">
+                                <i class="dw dw-logout"></i> Logout
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="github-link">
+                <a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg"
+                        alt="" /></a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="left-side-bar sidebar-light">
+        <div class="brand-logo">
+            <a href="index.html">
+                <img src="{{ asset('logo.png') }}" alt="" class="dark-logo" />
+                <img src="{{ asset('logo.png') }}" alt="" class="light-logo" />
+            </a>
+            <div class="close-sidebar" data-toggle="left-sidebar-close">
+                <i class="ion-close-round"></i>
+            </div>
+        </div>
+        <div class="menu-block customscroll">
+            <div class="sidebar-menu">
+                <ul id="accordion-menu">
+                    <li class="dropdown">
+                        <a href="{{ route('dashboardSiswa.index') }}" class="dropdown-toggle no-arrow">
+                            <span class="micon bi bi-house-door-fill"></span><span class="mtext">Dashboard
+                                Siswa</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ route('profile.index') }}" class="dropdown-toggle no-arrow">
+                            <span class="micon bi bi-person-badge"></span><span class="mtext">Profil</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ route('alat.index') }}" class="dropdown-toggle no-arrow">
+                            <span class="micon bi bi-tools"></span><span class="mtext">Daftar Alat</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ route('peminjamanSiswa.index') }}" class="dropdown-toggle no-arrow">
+                            <span class="micon bi bi-file-earmark-post"></span><span class="mtext">Peminjaman</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="{{ route('riwayatPinjamSiswa.index') }}" class="dropdown-toggle no-arrow">
+                            <span class="micon bi bi-bookmarks-fill"></span><span class="mtext">Riwayat
+                                Peminjaman</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="main-container">
+        @yield('content')
+    </div>
+
+    <!-- js -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
+    <script src="{{ asset('deskap/vendors/scripts/core.js') }}"></script>
+    <script src="{{ asset('deskap/vendors/scripts/script.min.js') }}"></script>
+    <script src="{{ asset('deskap/vendors/scripts/process.js') }}"></script>
+    <script src="{{ asset('deskap/vendors/scripts/layout-settings.js') }}"></script>
+    <script src="{{ asset('deskap/src/plugins/apexcharts/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('deskap/src/plugins/datatables/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('deskap/src/plugins/datatables/js/dataTables.bootstrap4.min.js') }}"></script>
+    <script src="{{ asset('deskap/src/plugins/datatables/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('deskap/src/plugins/datatables/js/responsive.bootstrap4.min.js') }}"></script>
+
+    <!-- Datatable Setting js -->
+    {{-- <script src="{{ asset('deskap/vendors/scripts/datatable-setting.js') }}"></script>
+    <script src="{{ asset('deskap/vendors/scripts/dashboard3.js') }}"></script> --}}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXZMQSS" height="0" width="0"
+            style="display: none; visibility: hidden"></iframe></noscript>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDrfnmeCrRM4kSfKO6UYgd4rYs_AN3K4WU",
+            authDomain: "peminjaman-8a8d0.firebaseapp.com",
+            projectId: "peminjaman-8a8d0",
+            messagingSenderId: "114150558143",
+            appId: "1:114150558143:web:a709540146fe7a0247b90a",
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const messaging = firebase.messaging();
+        messaging.onMessage((payload) => {
+            console.log("🔥 FOREGROUND MESSAGE:", payload);
+
+            new Notification(payload.notification.title, {
+                body: payload.notification.body
+            });
+        });
+    </script>
+    {{-- <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDrfnmeCrRM4kSfKO6UYgd4rYs_AN3K4WU",
+            authDomain: "peminjaman-8a8d0.firebaseapp.com",
+            projectId: "peminjaman-8a8d0",
+            messagingSenderId: "114150558143",
+            appId: "1:114150558143:web:a709540146fe7a0247b90a",
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const messaging = firebase.messaging();
+        messaging.onMessage((payload) => {
+            console.log("🔥 FOREGROUND MESSAGE:", payload);
+
+            new Notification(payload.notification.title, {
+                body: payload.notification.body
+            });
+        });
+
+        // 🔥 REGISTER SERVICE WORKER + AMBIL TOKEN
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/firebase-messaging-sw.js')
+                .then(function(registration) {
+
+                    Notification.requestPermission().then(() => {
+                            return messaging.getToken({
+                                vapidKey: 'BBmW3STkh775-ucf4qPMjejnfY53u0IT18CEXL0puloM3ACQ0zD4sYpvP_4V_klPPgIOSbwCusefroph47RXx-k',
+                                serviceWorkerRegistration: registration
+                            });
+                        }).then(token => {
+
+                            if (!token) {
+                                console.log("Token kosong");
+                                return;
+                            }
+
+                            console.log("TOKEN:", token);
+
+                            return fetch('/save-token', {
+                                method: 'POST',
+                                credentials: 'same-origin', // 🔥 TAMBAH INI (PENTING)
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json', // 🔥 TAMBAH INI (PENTING)
+                                    'X-CSRF-TOKEN': document
+                                        .querySelector('meta[name="csrf-token"]')
+                                        .getAttribute('content')
+                                },
+                                body: JSON.stringify({
+                                    token: token
+                                })
+                            });
+
+                        }).then(res => res.json())
+                        .then(data => {
+                            console.log("Token berhasil disimpan", data);
+                        })
+                        .catch(err => console.log("ERROR:", err));
+
+                });
+        }
+    </script> --}}
+    <!-- End Google Tag Manager (noscript) -->
+    @yield('modal')
+    @stack('scripts')
+</body>
+
+</html>

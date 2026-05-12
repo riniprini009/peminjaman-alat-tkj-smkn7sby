@@ -1,0 +1,245 @@
+/* ===== SEARCH BAR ===== */
+/* ===== WRAPPER UTAMA ===== */
+.toolbar-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 365px;
+    width: 100%;
+    flex: 1;
+}
+
+.search-wrapper-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #436c9c;
+}
+
+.search-box-wrapper {
+    border-radius: 14px;
+    height: 48px;
+    padding-left: 42px;
+    padding-right: 0px;
+    border: 1px solid #dde1e9;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+.search-box-wrapper::placeholder {
+    font-weight: 600;
+    color: #6b7280;
+    opacity: 1; /* biar nggak pudar */
+}
+
+.filter-btn {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 0 10px 10px 0;
+    border: none;
+    background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #2c3e50,
+        #2980b9
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #2980b9);
+
+    color: #fff;
+    width: 38px;
+    height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    /* position: relative; */
+    /* penting */
+}
+
+.filter-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+
+    width: 18px;
+    height: 18px;
+
+    background: #ef4444;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+
+    display: none;
+    /* default hidden */
+}
+
+.filter-btn:hover {
+    transform: translateY(-50%) scale(1.05);
+}
+
+.modal-content {
+    border-radius: 22px;
+    border: none;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.modal-header {
+    border: none;
+    background: #2c3e50; /* fallback */
+    background: -webkit-linear-gradient(to right, #243447, #2e6f9e);
+
+    background: linear-gradient(to right, #243447, #2e6f9e);
+    border-radius: 15px 15px 0px 0px;
+    color: white;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.close {
+    color: white;
+    opacity: 1;
+}
+
+.modal-body {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+/* biar scroll-nya halus & modern */
+.modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #c7c7ff;
+    border-radius: 10px;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #6366f1;
+}
+
+.filter-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 12px;
+    border: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.filter-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.form-control {
+    border-radius: 10px;
+    height: 42px;
+    font-size: 13px;
+}
+
+.modal-footer {
+    border: none;
+}
+
+.filter-card:hover .filter-icon {
+    background: rgba(99, 102, 241, 0.18);
+}
+
+.filter-label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 6px;
+}
+
+.filter-icon {
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    background: #dbeafe;
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+.filter-badge.pop {
+    animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .toolbar-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-wrapper {
+        max-width: 100%;
+    }
+
+    .btn-universal {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-with-icon {
+    padding-right: 45px; /* kasih ruang buat tombol di kanan */
+}
+
+.filter-btn {
+    position: absolute;
+    right: 0px; /* jangan 0 biar ada jarak dikit */
+    top: 50%;
+    transform: translateY(-50%);
+
+    border-radius: 0 8px 8px 0;
+    width: 41px;
+    height: 41px;
+}
+
+.btn-universal {
+    height: 41px !important;
+}

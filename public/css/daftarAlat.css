@@ -1,0 +1,833 @@
+select:invalid {
+    color: #72797f;
+    /* abu-abu */
+}
+
+select option {
+    color: #000;
+    /* option normal hitam */
+}
+
+/* CARI BUTTON */
+.btn-search,
+.btn-custom {
+    background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #2c3e50,
+        #2980b9
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #2c3e50,
+        #2980b9
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    border: none;
+    /* box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25); */
+}
+
+.btn-danger {
+    /* background-color: #f55567 !important; */
+    border-color: #f55567 !important;
+}
+
+/* RESET BUTTON */
+.btn-reset {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #f3f4f6;
+}
+
+/* HOVER SIMPLE */
+/* .btn-search:hover {
+                                                                                                                                                                                                                        background: #6168ef;
+                                                                                                                                                                                                                    } */
+/*
+                                                                                                                                                                                                                    .btn-reset:hover {
+                                                                                                                                                                                                                        background: #e5e7eb;
+                                                                                                                                                                                                                    } */
+
+.bg-date,
+.bg-time {
+    background: #3d6497;
+    border-radius: 11px;
+}
+
+.dataTables_filter {
+    margin: 0 !important;
+}
+
+.dataTables_filter label {
+    margin: 0;
+    width: 100%;
+}
+
+.dataTables_filter input {
+    width: 100% !important;
+    margin-left: 0 !important;
+    border-radius: 6px;
+}
+
+/* hilangkan jarak default datatable */
+.dataTables_filter,
+.dataTables_length {
+    margin-bottom: 0 !important;
+}
+
+.qty-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 32px;
+    background: #fff;
+}
+
+.qty-box:hover {
+    box-shadow: 0 0 0 2px rgba(165, 157, 158, 0.2);
+}
+
+/* tombol + dan - */
+.qty-btn {
+    width: 20px;
+    height: 28px;
+    border: none;
+    background: rgba(255, 252, 252, 0.638);
+    font-weight: bold;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.qty-btn:hover {
+    background: #e9ecef;
+}
+
+/* input angka */
+.qty-input {
+    width: 20px;
+    height: 28px;
+    border: none;
+    text-align: center !important;
+    font-size: 12px;
+    outline: none;
+    background: white;
+}
+
+/* disable state */
+.qty-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.info-premium {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 14px;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+
+    font-weight: 600;
+    font-size: 15px;
+    color: #111827;
+    letter-spacing: 0.2px;
+}
+
+.info-premium i {
+    color: #2f4e77;
+    font-size: 26px;
+}
+
+/* judul */
+.info-premium .title {
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-size: 16px;
+}
+
+/* separator garis halus */
+.info-premium .divider {
+    width: 1px;
+    height: 18px;
+    background: #e5e7eb;
+}
+
+/* chip base */
+.chip {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* tanggal */
+.chip-date {
+    background: rgba(59, 130, 246, 0.12);
+    color: #2563eb;
+}
+
+/* jam */
+.chip-time {
+    background: rgba(16, 185, 129, 0.12);
+    color: #059669;
+}
+
+/* hover glow (biar hidup) */
+.info-premium:hover {
+    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+    transform: translateY(-1px);
+    transition: 0.2s ease;
+}
+
+/* =========================
+                                                                                                                                                   CONTAINER (lebih premium)
+                                                                                                                                                ========================= */
+.view-toggle-premium {
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 1px solid rgba(99, 102, 241, 0.18);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    gap: 10px;
+
+    transition: all 0.25s ease;
+}
+
+.view-toggle-premium:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+                                                                                                                                                   ICON STYLE (lebih soft premium)
+                                                                                                                                                ========================= */
+.icon-list,
+.icon-grid {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #f3f4f6;
+    color: #6b7280;
+
+    transition: all 0.25s ease;
+}
+
+/* inactive hover */
+.icon-list:hover,
+.icon-grid:hover {
+    background: #e5e7eb;
+    color: #111827;
+    transform: scale(1.05);
+}
+
+/* =========================
+                                                                                                                                                   ACTIVE STATES (lebih “glow”)
+                                                                                                                                                ========================= */
+body.list-mode .icon-list {
+    background: rgba(99, 102, 241, 0.18);
+    color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.08);
+    transform: scale(1.08);
+}
+
+body.grid-mode .icon-grid {
+    background: rgba(16, 185, 129, 0.18);
+    color: #059669;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+    transform: scale(1.08);
+}
+
+/* =========================
+                                                                                                                                                   SWITCHERY (fix premium look)
+                                                                                                                                                ========================= */
+.switchery {
+    background-color: #e5e7eb !important;
+    border-radius: 999px !important;
+
+    height: 24px !important;
+    width: 44px !important;
+
+    border: none !important;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.06),
+        0 2px 6px rgba(0, 0, 0, 0.05);
+
+    transition: all 0.25s ease !important;
+}
+
+/* knob */
+.switchery > small {
+    width: 20px !important;
+    height: 20px !important;
+
+    top: 2px !important;
+    left: 2px !important;
+
+    background: #ffffff !important;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+
+    transition: all 0.25s ease !important;
+}
+
+/* checked state */
+.switchery.checked {
+    background: linear-gradient(135deg, #6366f1, #4f46e5) !important;
+
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.12),
+        0 6px 16px rgba(99, 102, 241, 0.25);
+}
+
+/* knob move */
+.switchery.checked > small {
+    transform: translateX(20px);
+}
+
+/* hover feel */
+.switchery:hover {
+    transform: scale(1.04);
+}
+
+/* =========================
+                                                                                                                               GOD MODE CARD BASE
+                                                                                                                            ========================= */
+#view-card .da-card {
+    position: relative;
+
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    /* border: 1px solid #a7b8ccde !important; */
+    border: 1px solid rgba(148, 163, 184, 0.18) !important;
+    border-radius: 20px !important;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 4px 4px rgba(224, 224, 224, 0.8),
+        0 4.3px 2px rgb(224, 224, 224, 0.8);
+
+    transition: all 0.35s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+/* hover = floating + depth */
+#view-card .da-card:hover {
+    transform: translateY(-8px) scale(1.015);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(99, 102, 241, 0.08);
+}
+
+/* =========================
+                                                                                                                               IMAGE HERO (CINEMATIC)
+                                                                                                                            ========================= */
+#view-card .da-card-photo {
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+}
+
+#view-card .da-card-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(15, 23, 42, 0.35),
+        transparent 60%
+    );
+    z-index: 1;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+#view-card .da-card:hover .da-card-photo::before {
+    opacity: 1;
+}
+
+#view-card .da-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+#view-card .da-card:hover img {
+    transform: scale(1.1);
+}
+
+/* =========================
+                                                                                                                               STATUS BADGE (GOD MODE)
+                                                                                                                            ========================= */
+.status-pill {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+.status-pill.available {
+    background: rgba(16, 185, 129, 0.12);
+
+    color: #059669;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.status-pill.empty {
+    background: rgba(239, 68, 68, 0.1);
+
+    color: #dc2626;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* =========================
+                                                                                                                               TYPOGRAPHY (CLEAN SYSTEM)
+                                                                                                                            ========================= */
+#view-card .da-card-content h5 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.2px;
+}
+
+#view-card .da-card-content p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* =========================
+                                                                                                                               PROGRESS (LIVE BAR FEEL)
+                                                                                                                            ========================= */
+#view-card .progress,
+#view-table .progress {
+    height: 12px;
+    background: #eef2f7;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+#view-card .progress-bar,
+#view-table .progress-bar {
+    background: linear-gradient(90deg, #6366f1, #22c55e, #10b981);
+    background-size: 200% 100%;
+    animation: flow 2.5s linear infinite;
+
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+@keyframes flow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+/* =========================
+                                                                                                                               GOD BUTTON (PINJAM)
+                                                                                                                            ========================= */
+#view-card .btn-custom,
+#view-table .btn-custom {
+    position: relative;
+    overflow: hidden;
+
+    background: #2980b9; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+        to right,
+        #2c3e50,
+        #2980b9
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+        to right,
+        #2c3e50,
+        #2980b9
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 7px 16px;
+    font-size: 13px;
+
+    /* box-shadow: 0 12px 25px rgba(99, 102, 241, 0.25); */
+
+    transition: all 0.25s ease;
+}
+
+/* glow sweep effect */
+#view-card .btn-custom::after,
+#view-table .btn-custom::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+
+    transition: 0.5s;
+}
+
+#view-card .btn-custom:hover::after,
+#view-table .btn-custom:hover::after {
+    left: 100%;
+}
+
+#view-card .btn-custom:hover,
+#view-table .btn-custom:hover {
+    transform: translateY(-2px) scale(1.02);
+}
+
+/* =========================
+                                                                                                                               GRID SPACING SYSTEM
+                                                                                                                            ========================= */
+#view-card .col-lg-3 {
+    margin-bottom: 22px;
+}
+
+#view-card .da-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* hover lift + shadow */
+#view-card .da-card:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* glow sweep effect (sama seperti button) */
+#view-card .da-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+
+    transition: 0.6s;
+    pointer-events: none;
+}
+
+/* trigger sweep saat hover */
+#view-card .da-card:hover::after {
+    left: 100%;
+}
+
+.card-body {
+    padding: 20px 26px;
+    border-radius: 22px !important;
+}
+
+.card-input {
+    border-radius: 22px;
+    background-color: white;
+    transition: transform 0.35s ease;
+    /* box-shadow:
+        0 3.5px 4px rgba(224, 224, 224, 0.8),
+        0 1.5px 2px rgb(224, 224, 224, 0.8); */
+}
+
+.card-input:hover {
+     transform: translateY(-5px) scale(1.01);
+    
+}
+
+.box-ketersediaan {
+    padding: 39px;
+    margin-top: 18px;
+
+    border-radius: 22px;
+    transition: transform 0.35s ease;
+    background: white;
+    backdrop-filter: blur(10px);
+    /* box-shadow:
+        0 3.5px 4px rgba(224, 224, 224, 0.8),
+        0 1.5px 2px rgb(224, 224, 224, 0.8); */
+    position: relative;
+    overflow: hidden;
+     transition: transform 0.35s ease;
+}
+
+.box-ketersediaan:hover {
+    transform: translateY(-5px) scale(1.01);
+}
+
+/* .box-ketersediaan {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.35s ease;
+} */
+
+.box-ketersediaan.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.box-ketersediaan::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #3d6497;
+
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.box-ketersediaan::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: #4d73a5da;
+
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+/* info header tetap konsisten */
+#info-Tanggal-Jam {
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* #box-ketersediaan {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+} */
+
+#modal-validasi .modal-dialog {
+    max-width: 620px;
+}
+
+.modal-detail .modal-body {
+    padding: 20px !important;
+    background: #2870b9 !important;
+}
+
+.modal {
+    overflow-x: hidden !important;
+}
+
+/* kunci lebar modal */
+#modal-detail-peminjaman .modal-dialog {
+    max-width: 600px; /* modal-md versi aman */
+    width: 100%;
+    margin: auto;
+}
+
+/* pastikan body tidak overflow horizontal */
+.modal-detail {
+    overflow-x: hidden;
+}
+
+.modal-dialog {
+    max-height: 90vh;
+}
+
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 90vh;
+}
+
+.modal-content .shadow{
+    border-radius: 15px;
+}
+
+/* bagian body modal */
+.modal-body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* scroll hanya tabel alat */
+.scroll-alat {
+    max-height: 450px; /* kamu bisa adjust */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* biar header tabel tetap sticky */
+.scroll-alat thead th {
+    position: sticky;
+    top: 0;
+    background: #f8f9fa;
+    z-index: 2;
+}
+
+.footer {
+    padding-left: 15px !important;
+}
+
+/* INPUT BIASA */
+.form-input {
+    background: #eeeff5c9 !important;
+    border: 0.5px solid #9fabbc96;
+    border-radius: 11px;
+}
+
+
+/* SELECT2 */
+.select2-container--default .select2-selection--single {
+    background: #eeeff5c9 !important;
+    border: 0.5px solid #9fabbc96;
+    border-radius: 11px;
+}
+
+/* FLATPICKR */
+/* .flatpickr-input {
+    background: #e9edf9c9 !important;
+    border: 1px solid #3d6497;
+} */
+
+.data-table {
+    border-collapse: separate !important;
+    border-spacing: 0 18px; /* jarak antar row */
+    background: #ebf0f68e;
+    border: none;
+}
+
+/* ROW STYLE */
+/* ROW STYLE */
+
+
+
+
+.kop-line {
+    position: relative;
+    margin: 0;
+    height: 2.68px;
+}
+
+/* garis atas tebal */
+.kop-line::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: 1.5px solid #b1bfcef6;
+}
+
+/* garis bawah tipis */
+.kop-line::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #b1bfcef6;
+}
+
+
+
+#empty-row td {
+    padding: 24px;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #617289;
+}
+
+.box-ketersediaan {
+    display: none;
+}
+.box-ketersediaan.active {
+    display: block;
+}
+
+.alat-table.active,
+.alat-card.active {
+    border: 2px solid #86efac !important; /* hijau pastel */
+    border-radius: 12px;
+    background: #f0fdf4 !important; /* soft background hijau */
+    transition: all 0.2s ease;
+}
+
+/* khusus card biar lebih hidup */
+.alat-card.active {
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.15) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* khusus table row */
+.alat-table.active td {
+    background: #f0fdf4 !important;
+}
+
+.alat-table.active,
+.alat-card.active {
+    box-shadow: 0 0 0 2px rgba(134, 239, 172, 0.4) !important;
+}
+
+.alat-card.active .da-card-content{
+     background: #f0fdf4
+}
+
+

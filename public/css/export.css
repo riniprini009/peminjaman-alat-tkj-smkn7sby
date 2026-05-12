@@ -1,0 +1,251 @@
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12px;
+            color: #000;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            width: 100%;
+            display: table;
+        }
+
+        .logo-cell {
+            display: table-cell;
+            width: 90px;
+            vertical-align: middle;
+        }
+
+        .logo {
+            width: 75px;
+        }
+
+        .header-text {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .header-text p {
+            margin: 2px;
+            font-size: 12px;
+        }
+
+        /* ===== GARIS KOP ===== */
+        .line {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .line .top {
+            border-top: 3px solid black;
+            margin-bottom: 2px;
+        }
+
+        .line .bottom {
+            border-top: 1px solid black;
+        }
+
+        /* ===== JUDUL ===== */
+        .title-wrapper {
+            display: table;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .title-text {
+            display: table-cell;
+            text-align: center;
+            padding-left: 90px;
+        }
+
+        .title-text h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            /* 🔥 underline tebal */
+            display: inline-block;
+            padding-bottom: 3px;
+        }
+
+        /*
+        .subtitle {
+            text-align: center;
+            font-size: 12px;
+            margin-top: 4px;
+            margin-bottom: 10px;
+            padding-left: 90px;
+        } */
+
+        /* ===== TABLE ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background-color: #dbeafe;
+            color: #000;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #000;
+            padding: 6px;
+        }
+
+        table td {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        /*
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        } */
+
+        body {
+            font-family: "Times New Roman", serif;
+            font-size: 12px;
+            color: #000;
+        }
+
+        /* ===== KOP ===== */
+        .kop {
+            width: 100%;
+            display: table;
+        }
+
+        .kop-left,
+        .kop-center,
+        .kop-right {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .kop-left {
+            width: 90px;
+        }
+
+        .kop-right {
+            width: 90px;
+            /* 🔥 penyeimbang */
+        }
+
+        .logo {
+            width: 75px;
+        }
+
+        .kop-center {
+            text-align: center;
+        }
+
+        .kop-center .atas {
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .kop-center .sekolah {
+            font-size: 21px;
+            font-weight: 700;
+            ;
+            letter-spacing: 1px;
+            margin: 2px 0;
+        }
+
+        .kop-center .jurusan {
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        .kop-center .alamat {
+            font-size: 12px;
+            margin: 1px;
+        }
+
+        /* ===== GARIS ===== */
+        .line {
+            margin-top: 10px;
+            margin-bottom: 15px;
+        }
+
+        .line .top {
+            border-top: 4px solid black;
+            margin-bottom: 2px;
+        }
+
+        .line .bottom {
+            border-top: 2px solid black;
+        }
+
+        /* ===== TITLE ===== */
+        .title {
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .title h3 {
+            display: inline-block;
+            font-size: 17px;
+            font-weight: 800;
+            border-bottom: 2px solid #000;
+            padding-bottom: 3px;
+            margin: 0;
+            letter-spacing: 0.2px;
+        }
+
+        .subtitle {
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            margin-bottom: 21px;
+            display: block;
+        }
+
+        /* ===== TABLE ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th {
+            background-color: #d6d6d6;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        table th,
+        table td {
+            border: 1px solid #000;
+            padding: 8px;
+        }
+
+        table td {
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+            /* 🔥 abu-abu soft */
+        }
