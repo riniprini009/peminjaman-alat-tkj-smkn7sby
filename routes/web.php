@@ -50,7 +50,7 @@ Route::middleware(['role:admin'])->group(function () {
     Route::post('/store-jenis', [JenisAlatController::class, 'store'])->name('jenis.store');
     Route::put('/update-jenis/{id}', [JenisAlatController::class, 'update'])->name('jenis.update');
     Route::delete('/delete-jenis/{id}', [JenisAlatController::class, 'delete'])->name('jenis.delete');
-    Route::get('/export-jenis', [JenisAlatController::class, 'exportPdf'])->name('akun.export');
+    Route::get('/export-jenis', [JenisAlatController::class, 'exportPdf'])->name('jenis.export');
 
     Route::get('/data-tipe', [TipeAlatController::class, 'tipeIndex'])->name('tipe.index');
     Route::get('/add-tipe', [TipeAlatController::class, 'add'])->name('tipe.add');
