@@ -24,7 +24,9 @@ Route::post('/logout', [AuthController::class, 'logout'])
 
 
 
-
+Route::get('/', function () {
+    return 'Laravel Railway Berhasil';
+});
 
 
 
