@@ -10,6 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.3",
+        "ext-gd": "*",
         "barryvdh/laravel-dompdf": "*",
         "cuyz/valinor": "^2.4",
         "kreait/firebase-php": "8.0",
