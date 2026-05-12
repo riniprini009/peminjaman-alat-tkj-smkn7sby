@@ -11,18 +11,6 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswa', function (Blueprint $table) {
-            $table->id('id_siswa');
-            $table->string('nama_siswa');
-            $table->string('nis', 10)->unique();
-            $table->string('kelas', 10);
-            $table->enum('jenis_kelamin', [
-                'perempuan',
-                'laki-laki'
-            ]);
-            $table->timestamps();
-        });
-
         Schema::create('akun_user', function (Blueprint $table) {
             $table->id('id_akun_user');
             $table->string('username')->unique();
@@ -39,6 +27,21 @@ return new class extends Migration
             ])->default('aktif');
             $table->timestamps();
         });
+
+        Schema::create('siswa', function (Blueprint $table) {
+            $table->id('id_siswa');
+            $table->foreignId('id_akun_user')
+                ->constrained('akun_user', 'id_akun_user')
+                ->cascadeOnDelete();
+            $table->string('nama_siswa');
+            $table->string('nis', 10)->unique();
+            $table->string('kelas', 10);
+            $table->enum('jenis_kelamin', [
+                'perempuan',
+                'laki-laki'
+            ]);
+            $table->timestamps();
+        });
     }
 
     /**
@@ -46,7 +49,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('akun_user');
         Schema::dropIfExists('siswa');
+        Schema::dropIfExists('akun_user');
     }
 };

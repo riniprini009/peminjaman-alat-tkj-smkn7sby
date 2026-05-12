@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -12,7 +13,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('peminjaman', function (Blueprint $table) {
-            $table->id('id_pinjam')->primary();
+            $table->id('id_pinjam');
+            $table->foreignId('id_siswa')
+                ->constrained('siswa', 'id_siswa')
+                ->cascadeOnDelete();
             $table->date('tanggal_mulai');
             $table->date('tanggal_selesai');
             $table->time('jam_mulai');
@@ -29,6 +33,14 @@ return new class extends Migration
         });
 
         Schema::create('peminjaman_detail', function (Blueprint $table) {
+            $table->foreignId('id_pinjam')
+                ->constrained('peminjaman', 'id_pinjam')
+                ->cascadeOnDelete();
+
+            $table->foreignId('id_detail_alat')
+                ->constrained('detail_alat', 'id_detail_alat')
+                ->cascadeOnDelete();
+
             $table->dateTime('tanggal_pengembalian')->nullable();
             $table->boolean('is_kembali')->default(false);
             $table->enum('kondisi_kembali', [
@@ -43,6 +55,13 @@ return new class extends Migration
         });
 
         Schema::create('peminjaman_tipe', function (Blueprint $table) {
+            $table->foreignId('id_pinjam')
+                ->constrained('peminjaman', 'id_pinjam')
+                ->cascadeOnDelete();
+
+            $table->foreignId('id_tipe')
+                ->constrained('tipe_alat', 'id_tipe')
+                ->cascadeOnDelete();
             $table->integer('quantity');
             $table->timestamps();
         });

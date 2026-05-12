@@ -12,13 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('jenis_alat', function (Blueprint $table) {
-            $table->id('id_jenis')->primary();
+            $table->id('id_jenis');
             $table->string('nama_jenis')->unique();
             $table->timestamps();
         });
 
         Schema::create('tipe_alat', function (Blueprint $table) {
-            $table->id('id_tipe')->primary();
+            $table->id('id_tipe');
+            $table->foreignId('id_jenis')
+                ->constrained('jenis_alat', 'id_jenis')
+                ->cascadeOnDelete();
             $table->string('nama_tipe', 255)->unique();
             $table->integer('stok');
             $table->string('lokasi_rak', 5);
@@ -27,7 +30,11 @@ return new class extends Migration
         });
 
         Schema::create('detail_alat', function (Blueprint $table) {
-            $table->id('id_detail_alat')->primary();
+            $table->id('id_detail_alat');
+            $table->foreignId('id_tipe')
+                ->constrained('tipe_alat', 'id_tipe')
+                ->cascadeOnDelete();
+
             $table->string('kode_alat')->unique()->nullable();
             $table->enum('kondisi_alat', [
                 'baik',
