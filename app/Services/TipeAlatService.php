@@ -25,13 +25,10 @@ class TipeAlatService
 
             $fullPath = storage_path('app/public/' . $qrPath);
 
-            $url = route('scan.qr', $kode_alat);
-
+            $url = url('scan/' . $kode_alat);
             // 🔥 INI FIX UTAMA (AMAN DARI IMAGICK)
-            $qrImage = \SimpleSoftwareIO\QrCode\Facades\QrCode::format('png')
-                ->errorCorrection('Q')
-                ->size(400)
-                ->margin(2)
+            $qrImage = QrCode::format('png')
+                ->size(300)
                 ->generate($url);
 
             file_put_contents($fullPath, $qrImage);
