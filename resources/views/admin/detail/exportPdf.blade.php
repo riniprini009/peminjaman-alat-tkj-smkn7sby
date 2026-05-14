@@ -115,7 +115,7 @@
         @foreach ($details as $detail)
             <div class="qr-item">
                 <div class="qr-box">
-                    <img class="qr-img" src="{{ public_path($detail->qr_code) }}">
+                    <img class="qr-img" src="{{ storage_path('app/public/' . $detail->qr_code) }}">
                     <div class="garis"></div>
 
                     <div class="kode-wrapper">
