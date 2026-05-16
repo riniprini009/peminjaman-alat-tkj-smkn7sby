@@ -228,7 +228,7 @@ $(document).ready(function () {
         );
 
         $("#tanggal").text(formatTglMulai);
-        $("#jam").text(jamMulai);
+      $("#jam").text(jamMulai.slice(0, 5));
 
         $.ajax({
             url: "/check-alat",

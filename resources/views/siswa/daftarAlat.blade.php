@@ -74,7 +74,7 @@
                                 <option value="11:30:00">11:30</option>
                                 <option value="12:00:00">12:00</option>
                                 <option value="10:55:00">10:55</option>
-                                <option value="19:58:00">19:58</option>
+                                <option value="23:17:00">23:17</option>
                                 <option value="13:45:00">13:45</option>
                                 <option value="14:30:00">14:30</option>
                                 <option value="15:15:00">15:15</option>
@@ -88,7 +88,7 @@
                         <select id="filterJenis" class="form-control form-input">
                             <option value="">All Jenis</option>
                             @foreach ($jenis as $jns)
-                                <option value="{{ $jns->nama_jenis }}">{{ $jns->nama_jenis }}</option>
+                                <option value="{{ $jns->nama_jenis }}">{{ ucwords($jns->nama_jenis) }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -99,7 +99,7 @@
                         <select id="filterTipe" class="form-control form-input">
                             <option value="">All Tipe</option>
                             @foreach ($tipes as $tipe)
-                                <option value="{{ $tipe->nama_tipe }}">{{ $tipe->nama_tipe }}</option>
+                                <option value="{{ $tipe->nama_tipe }}">{{ ucwords($tipe->nama_tipe) }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -171,17 +171,17 @@
                                                 <div class="d-flex align-items-center">
                                                     <div class="flex-shrink-0 " style="width:40px;">
                                                         <img src="{{ asset('storage/' . $tipe->gambar) }}"
-                                                            alt="{{ $tipe->nama_tipe }}"
+                                                            alt="{{ ucwords($tipe->nama_tipe) }}"
                                                             style="width:40px; height:40px; object-fit:cover; border-radius:4px;">
                                                     </div>
-                                                    <div class="d-flex flex-column ms-2 pl-2">
+                                                    <div class=" ms-2 pl-2">
                                                         <span class="fw-bold text-truncate "
-                                                            style="max-width: 150px;">{{ $tipe->nama_tipe }}</span>
+                                                            style="max-width: 150px;">{{ ucwords($tipe->nama_tipe) }}</span>
 
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>{{ $tipe->jenisAlat->nama_jenis }}</td>
+                                            <td>{{ ucwords($tipe->jenisAlat->nama_jenis) }}</td>
                                             <td>
                                                 @if ($tipe->stok > 0)
                                                     <span class="status-pill available stok-tersedia">Tersedia
@@ -225,12 +225,12 @@
                                             data-nama="{{ strtolower($tipe->nama_tipe) }}">
                                             <div class="da-card-photo image-wrapper">
                                                 <img src="{{ asset('storage/' . $tipe->gambar) }}"
-                                                    alt="{{ $tipe->nama_tipe }}" />
+                                                    alt="{{ ucwords($tipe->nama_tipe) }}" />
                                             </div>
                                             <div class="kop-line"></div>
                                             <div class="da-card-content pb-0">
-                                                <h5 class="h5 text-center">{{ $tipe->nama_tipe }}</h5>
-                                                <p class="mb-0 text-center">{{ $tipe->jenisAlat->nama_jenis }}
+                                                <h5 class="h5 text-center">{{ ucwords($tipe->nama_tipe) }}</h5>
+                                                <p class="mb-0 text-center">{{ ucwords($tipe->jenisAlat->nama_jenis) }}
                                                 </p>
                                             </div>
                                             <div class="mt-2 mb-2 text-center">

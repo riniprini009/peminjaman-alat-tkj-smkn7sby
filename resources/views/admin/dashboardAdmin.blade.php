@@ -72,7 +72,7 @@
                             <table class="data-table table hover multiple-select-row py-0 px-1 border-0">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>No.</th>
                                         <th>Tipe Alat</th>
                                         <th>Kode Alat</th>
                                         <th>Lokasi Rak</th>

@@ -87,7 +87,7 @@
                         <select id="filterJenis" class="form-control form-input">
                             <option value="">All Jenis</option>
                             @foreach ($jenis as $jns)
-                                <option value="{{ $jns->nama_jenis }}">{{ $jns->nama_jenis }}</option>
+                                <option value="{{ $jns->nama_jenis }}">{{ ucwords($jns->nama_jenis) }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -98,7 +98,7 @@
                         <select id="filterTipe" class="form-control form-input">
                             <option value="">All Tipe</option>
                             @foreach ($tipes as $tipe)
-                                <option value="{{ $tipe->nama_tipe }}">{{ $tipe->nama_tipe }}</option>
+                                <option value="{{ $tipe->nama_tipe }}">{{ ucwords($tipe->nama_tipe) }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -160,8 +160,8 @@
                                 <tbody>
                                     @foreach ($tipes as $index => $tipe)
                                         <tr class="alat-table" data-id="{{ $tipe->id_tipe }}"
-                                            data-nama="{{ $tipe->nama_tipe }}"
-                                            data-jenis="{{ $tipe->jenisAlat->nama_jenis }}">
+                                            data-nama="{{ ucwords($tipe->nama_tipe) }}"
+                                            data-jenis="{{ ucwords($tipe->jenisAlat->nama_jenis) }}">
                                             <td>
                                                 <div class="no-badge">{{ $index + 1 }}.</div>
                                             </td>
@@ -169,17 +169,17 @@
                                                 <div class="d-flex align-items-center">
                                                     <div class="flex-shrink-0 " style="width:40px;">
                                                         <img src="{{ asset('storage/' . $tipe->gambar) }}"
-                                                            alt="{{ $tipe->nama_tipe }}"
+                                                            alt="{{ ucwords($tipe->nama_tipe) }}"
                                                             style="width:40px; height:40px; object-fit:cover; border-radius:4px;">
                                                     </div>
-                                                    <div class="d-flex flex-column ms-2 pl-2">
+                                                    <div class="ms-2 pl-2">
                                                         <span class="fw-bold text-truncate "
-                                                            style="max-width: 150px;">{{ $tipe->nama_tipe }}</span>
+                                                            style="max-width: 150px;">{{ ucwords($tipe->nama_tipe) }}</span>
 
                                                     </div>
                                                 </div>
                                             </td>
-                                            <td>{{ $tipe->jenisAlat->nama_jenis }}</td>
+                                            <td>{{ ucwords($tipe->jenisAlat->nama_jenis) }}</td>
                                             <td>
                                                 @if ($tipe->stok > 0)
                                                     <span class="status-pill available stok-tersedia">Tersedia
@@ -231,12 +231,12 @@
                                                         style="text-align: center;  width: 25px;" readonly>
                                                     <button class="qty-btn btn-tambah">+</button>
                                                 </div>
-                                                <div>
+                                                {{-- <div>
                                                     <button type="button" class="btn btn-custom btn-pinjam m-3"
                                                         data-id="{{ $tipe->id_tipe }}">
                                                         Pinjam
                                                     </button>
-                                                </div>
+                                                </div> --}}
                                             </div>
                                         </div>
                                     </div>

@@ -34,7 +34,7 @@
                                     <a href="#">Data Tipe Alat</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
-                                    Data Detail Alat
+                                    {{ ucwords($tipe->nama_tipe) }}
                                 </li>
                             </ol>
                         </nav>

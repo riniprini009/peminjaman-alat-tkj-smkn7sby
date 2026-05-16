@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Log;
 use Kreait\Firebase\Factory;
 
 class FCMService
@@ -12,19 +13,42 @@ class FCMService
         //     ->withServiceAccount(
         //         json_decode(env('FIREBASE_CREDENTIALS_JSON'), true)
         //     );
-        $factory = (new Factory)
-            ->withServiceAccount(storage_path('app/firebase/firebase.json'));
+        Log::info('FCM MASUK SERVICE');
 
-        $messaging = $factory->createMessaging();
+        if (!$token) {
+            Log::error('FCM TOKEN KOSONG');
+            return;
+        }
 
-        $message = [
-            'token' => $token,
-            'notification' => [
-                'title' => $title,
-                'body' => $body,
-            ],
-        ];
+        try {
+            // $factory = (new Factory)
+            //     ->withServiceAccount(storage_path('app/firebase/firebase.json'));
+            $factory = (new Factory)
+                ->withServiceAccount(
+                    json_decode(env('FIREBASE_CREDENTIALS_JSON'), true)
+                );
 
-        return $messaging->send($message);
+            $messaging = $factory->createMessaging();
+
+            $message = [
+                'token' => $token,
+                'notification' => [
+                    'title' => $title,
+                    'body' => $body,
+                ],
+            ];
+
+            $result = $messaging->send($message);
+
+            Log::info('FCM SUCCESS', ['result' => $result]);
+            return $result;
+            // sleep(3);
+
+            // return $messaging->send($message);
+        } catch (\Throwable $e) {
+            Log::error('FCM ERROR', [
+                'message' => $e->getMessage()
+            ]);
+        }
     }
 }

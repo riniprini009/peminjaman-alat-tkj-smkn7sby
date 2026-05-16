@@ -183,6 +183,20 @@ class PeminjamanService
         $alat = DetailAlat::where('kode_alat', $kode)->firstOrFail();
         $idSiswa = Auth::user()->siswa->id_siswa;
 
+        $peminjamanAktif = Peminjaman::where('id_siswa', $idSiswa)
+            ->where('status_pinjam', 'aktif')
+            ->whereHas('detailAlat', function ($q) use ($alat) {
+                $q->where('detail_alat.id_detail_alat', $alat->id_detail_alat);
+            })
+            ->latest('id_pinjam')
+            ->first();
+
+        if ($peminjamanAktif) {
+            return redirect()->route('peminjamanSiswa.prosesPengembalian', [
+                'id' => $peminjamanAktif->id_pinjam,
+                'kode' => $kode
+            ]);
+        }
         // $peminjamanAktif = Peminjaman::where('status_pinjam', 'aktif')
         //     ->whereHas('detailAlat', function ($q) use ($alat) {
         //         $q->where('detail_alat.id_detail_alat', $alat->id_detail_alat);
@@ -225,6 +239,8 @@ class PeminjamanService
                 'kode' => $kode
             ]);
         }
+
+
 
         return redirect()->route('alat.index');
     }

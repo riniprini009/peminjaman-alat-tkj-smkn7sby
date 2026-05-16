@@ -14,13 +14,14 @@ class AuthController extends Controller
             'username' => 'required',
             'password' => 'required'
         ]);
+        
         $auth = Auth::attempt($request->only('username', 'password'));
 
         if (!$auth) {
             return back()->with('error', 'Username atau password salah!');
         }
 
-        $request->session()->regenerate(); // tambah ini
+        $request->session()->regenerate(); 
 
         $user = Auth::user();
         if ($user->status_akun == 'nonaktif') {
@@ -28,7 +29,6 @@ class AuthController extends Controller
             return 'Akun tidak aktif';
         }
 
-        // Redirect berdasarkan role
         switch ($user->role) {
             case 'admin':
                 return redirect()->intended(route('dashboardAdmin.index'));
@@ -51,7 +51,4 @@ class AuthController extends Controller
 
         return redirect('/login');
     }
-    // $akun_user = DB::table('akun_user')->where('username', $username)->first();
-    // $akuns = AkunUser::where('username', $request->username)->get();
-    // dd($akun_user, $akun, $akuns);
 }

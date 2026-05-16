@@ -1,3 +1,7 @@
+function ucwords(str) {
+    return str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
+}
+
 $(document).ready(function () {
     let summary = window.summary;
     let detail = window.detail;
@@ -56,22 +60,22 @@ $(document).ready(function () {
                                 </td>
 
                                 <td>
-                                    ${item.tipe_alat?.nama_tipe ?? "-"}
+                                    ${ucwords(item.tipe_alat?.nama_tipe ?? "-")}
                                 </td>
 
                                 <td>
                                     <span class="badge badge-soft-primary">
-                                        ${item.kode_alat}
+                                        ${ucwords(item.kode_alat)}
                                     </span>
                                 </td>
 
                                 <td>
-                                    ${item.tipe_alat?.lokasi_rak ?? "-"}
+                                    ${ucwords(item.tipe_alat?.lokasi_rak ?? "-")}
                                 </td>
 
                                 <td>
                                     <span class="badge ${badgeClass}">
-                                        ${item.kondisi_alat}
+                                        ${ucwords(item.kondisi_alat)}
                                     </span>
                                 </td>
                             </tr>
@@ -388,7 +392,6 @@ $(document).ready(function () {
                     : null,
             },
 
-            
             success: function (res) {
                 // reset semua tampilan dulu
                 $("#track-empty").addClass("d-none");

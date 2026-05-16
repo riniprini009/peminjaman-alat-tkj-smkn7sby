@@ -309,9 +309,11 @@
         messaging.onMessage((payload) => {
             console.log("🔥 FOREGROUND MESSAGE:", payload);
 
-            new Notification(payload.notification.title, {
-                body: payload.notification.body
-            });
+            if (Notification.permission === "granted") {
+                new Notification(payload.notification.title, {
+                    body: payload.notification.body
+                });
+            }
         });
     </script>
     {{-- <script>
