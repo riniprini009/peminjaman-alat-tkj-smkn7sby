@@ -67,33 +67,46 @@ class AlatController extends Controller
         return $dashboardService->kondisiAlatKabeng();
     }
 
-    public function exportKondisi()
-    {
-        $kondisis = TipeAlat::with([
-            'jenisAlat',
-            'detailAlat'
-        ])->get();
-
-        foreach ($kondisis as $item) {
-
-            $item->total_perbaikan = $item->detailAlat
-                ->where('kondisi_alat', 'perlu perbaikan')
-                ->count();
-
-            $item->total_rusak = $item->detailAlat
-                ->where('kondisi_alat', 'rusak')
-                ->count();
-
-            $item->total_hilang = $item->detailAlat
-                ->where('kondisi_alat', 'hilang')
-                ->count();
+public function exportKondisi()
+{
+    $kondisis = TipeAlat::with([
+        'jenisAlat',
+        'detailAlat' => function ($query) {
+            $query->where('kondisi_alat', '!=', 'baik');
         }
+    ])
+    ->whereHas('detailAlat', function ($query) {
+        $query->where('kondisi_alat', '!=', 'baik');
+    })
+    ->get();
 
-        $pdf = Pdf::loadView(
-            'kabeng.exportKondisi',
-            compact('kondisis')
-        );
+    foreach ($kondisis as $item) {
 
-        return $pdf->download('Data Kondisi Alat.pdf');
+        $item->total_perbaikan = $item->detailAlat
+            ->where('kondisi_alat', 'perlu perbaikan')
+            ->count();
+
+        $item->total_rusak = $item->detailAlat
+            ->where('kondisi_alat', 'rusak')
+            ->count();
+
+        $item->total_hilang = $item->detailAlat
+            ->where('kondisi_alat', 'hilang')
+            ->count();
     }
+
+    $kondisis = $kondisis->filter(function ($item) {
+        return
+            $item->total_perbaikan > 0 ||
+            $item->total_rusak > 0 ||
+            $item->total_hilang > 0;
+    });
+
+    $pdf = Pdf::loadView(
+        'kabeng.exportKondisi',
+        compact('kondisis')
+    );
+
+    return $pdf->download('Data Kondisi Alat.pdf');
+}
 }

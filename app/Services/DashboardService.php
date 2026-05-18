@@ -48,7 +48,7 @@ class DashboardService
     public function dashboardKabeng()
     {
         $siswa = Siswa::count();
-        $alat = TipeAlat::where('kondisi_alat', 'baik')->sum('stok');
+        $alat = DetailAlat::where('kondisi_alat', 'baik')->count();
         $jenis = JenisAlat::count();
 
         $alatBermasalah = DetailAlat::whereIn('kondisi_alat', [
@@ -120,7 +120,7 @@ class DashboardService
             ->where('id_siswa', $siswaId)
             ->count();
 
-        $terlambat = Peminjaman::where('status_pinjam', 'aktif')
+        $terlambat = Peminjaman::whereIn('status_pinjam', ['aktif', 'proses pengembalian'])
             ->where('id_siswa', $siswaId)
             ->get()
             ->filter(fn($pinjam) => $pinjam->terlambat())

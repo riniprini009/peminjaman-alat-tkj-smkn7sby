@@ -24,7 +24,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardAdmin.index') }}">Dashboard Admin</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="#">User</a>
@@ -154,10 +154,8 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button class="btn btn-light btn-back"><i
-                                    class="bi bi-arrow-counterclockwise"></i>Reset</button>
-                    <button class="btn btn-primary btn-universal"><i
-                                    class="bi bi-check2-circle"></i>Terapkan</button>
+                    <button class="btn btn-light btn-back"><i class="bi bi-arrow-counterclockwise"></i>Reset</button>
+                    <button class="btn btn-primary btn-universal"><i class="bi bi-check2-circle"></i>Terapkan</button>
                 </div>
             </div>
         </div>
@@ -189,8 +187,7 @@
                                 <div class="col-md-9 position-relative">
                                     <input type="text" class="form-control" id="nis" name="nis"
                                         placeholder="Masukkan NIS" required>
-                                    <small id="error-nis" class="d-none text-danger">
-                                    </small>
+                                    <small id="error-nis" class="text-danger d-none"></small>
                                 </div>
                             </div>
                             <div class="form-group row align-items-center">
@@ -352,6 +349,53 @@
                 }
             });
         });
+
+        let timer;
+        let nisAwal = '';
+
+        $('#nis').on('input', function() {
+
+            clearTimeout(timer);
+
+            let nis = $(this).val().trim();
+            let id = $('#id-siswa').val();
+
+            $('#error-nis').addClass('d-none').text('');
+
+            // default: aktifkan tombol dulu
+            $('#btn-edit').prop('disabled', false);
+
+            // kalau kosong atau sama dengan NIS awal → aman
+            if (nis === '' || nis === nisAwal) return;
+
+            timer = setTimeout(function() {
+
+                $.ajax({
+                    url: '/siswa/check-nis',
+                    method: 'POST',
+                    data: {
+                        nis: nis,
+                        id_siswa: id,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(res) {
+
+                        if (res.exist) {
+                            $('#error-nis')
+                                .removeClass('d-none')
+                                .text('NIS sudah digunakan');
+
+                            $('#btn-edit').prop('disabled', true);
+                        } else {
+                            $('#error-nis').addClass('d-none').text('');
+                            $('#btn-edit').prop('disabled', false);
+                        }
+                    }
+                });
+
+            }, 400);
+        });
+
         @if (session('update_success'))
             $('#update-success-text').html(
                 'Data siswa dengan nama <strong>{{ session('update_success') }}</strong> berhasil di update'
@@ -382,13 +426,6 @@
                 progressBar: true,
                 closeButton: true
             });
-        @endif
-
-        @if ($errors->has('nis'))
-            toastr.error(
-                'NIS sudah digunakan oleh siswa lain',
-                'Gagal Update'
-            );
         @endif
     </script>
 @endpush

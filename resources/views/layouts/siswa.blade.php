@@ -195,7 +195,10 @@
                 <div class="dropdown">
                     <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
                         <span class="user-icon">
-                            <img src="{{ asset('user.png') }}" alt="" />
+                            <img src="{{ asset(
+                                Auth::user()->siswa && strtolower(Auth::user()->siswa->jenis_kelamin) == 'perempuan' ? 'women.jpg' : 'user.png',
+                            ) }}"
+                                alt="user.png" />
                         </span>
                         <span class="user-name" style="font-weight: 700;">
                             Hi,
@@ -227,7 +230,7 @@
 
     <div class="left-side-bar sidebar-light">
         <div class="brand-logo">
-            <a href="index.html">
+            <a href="{{ route('dashboardSiswa.index') }}">
                 <img src="{{ asset('logo.png') }}" alt="" class="dark-logo" />
                 <img src="{{ asset('logo.png') }}" alt="" class="light-logo" />
             </a>

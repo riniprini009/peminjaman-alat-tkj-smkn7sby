@@ -24,7 +24,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardAdmin.index') }}">Dashboard Admin</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="#">Alat</a>
@@ -125,15 +125,17 @@
                                 <div class="col-md-9 position-relative">
                                     <input type="text" class="form-control" name="nama_jenis" id="nama"
                                         placeholder="Masukkan Nama Jenis">
-
+                                    <small id="error-jenis" class="text-danger d-none ml-1"></small>
                                 </div>
+
                             </div>
+
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-back" data-dismiss="modal"> <i
                                 class="fa-solid fa-circle-xmark"></i>Batal</button>
-                        <button type="submit" class="btn btn-universal"> <i
+                        <button type="submit" class="btn btn-universal" id="btn-submit"> <i
                                 class="fa-solid fa-check"></i>Simpan</button>
                     </div>
                 </form>
@@ -161,16 +163,14 @@
                                 <div class="col-md-9 position-relative">
                                     <input type="text" class="form-control" id="nama-jenis" name="nama_jenis"
                                         placeholder="Masukkan Nama Jenis">
-                                    <small id="edit-error-jenis" style="color:red; display:none;">
-                                        Nama jenis sudah digunakan
-                                    </small>
+                                    <small id="error-edit-jenis" class="text-danger d-none ml-1"></small>
                                 </div>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-back" data-dismiss="modal"><i
                                     class="fa-solid fa-circle-xmark"></i>Batal</button>
-                            <button type="submit" class="btn btn-universal"><i
+                            <button type="submit" class="btn btn-universal" id="btn-edit-submit"><i
                                     class="fa-solid fa-floppy-disk"></i>Simpan Perubahan</button>
                         </div>
                     </div>
@@ -351,6 +351,7 @@
 @endpush
 @push('scripts')
     <script>
+
         $(document).on("click", ".btn-delete", function(e) {
             e.preventDefault();
 
@@ -403,6 +404,7 @@
                 }
             });
         });
+
         @if (session('update_success'))
             $('#update-success-text').html(
                 'Data jenis alat dengan nama <strong>{{ session('update_success') }}</strong> berhasil di update'

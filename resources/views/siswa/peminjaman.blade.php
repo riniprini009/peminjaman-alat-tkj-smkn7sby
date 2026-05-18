@@ -41,7 +41,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardSiswa.index') }}">Dashboard Siswa</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Peminjaman

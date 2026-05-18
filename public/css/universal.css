@@ -1753,3 +1753,47 @@ td:last-child {
 .card-box:hover {
     transform: translateY(-5px) scale(1.01);
 }
+
+@media (max-width: 992px) {
+    .pd-ltr-20 {
+        padding: 5px;
+    }
+
+    .tab-system {
+        padding: 15px;
+    }
+
+    .tab-custom {
+        padding: 0 12px !important;
+    }
+
+    #table-menunggu,
+    #table-siap-diambil,
+    #table-aktif,
+    #table-proses-pengembalian,
+    #table-batal {
+        padding: 0 10px !important;
+    }
+
+    .nav-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+
+    #progressScan {
+        padding: 9px 5px;
+    }
+
+    .col-lg-5:first-child {
+        margin-bottom: 20px;
+    }
+
+    .inventory-scroll{
+        padding: 10px;
+    }
+
+    .box{
+        margin-bottom: 12px !important;
+    }
+}

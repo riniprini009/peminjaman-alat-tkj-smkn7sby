@@ -19,7 +19,7 @@ class JenisAlatController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_jenis' => 'required|string|unique:jenis_alat,nama_jenis|regex:/^(?!.*(.)\1{2,}).+$/'
+            'nama_jenis' => 'required|string|unique:jenis_alat,nama_jenis'
         ]);
 
         try {
@@ -38,7 +38,6 @@ class JenisAlatController extends Controller
             'nama_jenis' => [
                 'required',
                 'string',
-                'regex:/^(?!.*(.)\1{2,}).+$/',
                 Rule::unique('jenis_alat', 'nama_jenis')->ignore($idJenis, 'id_jenis')
             ]
         ]);
@@ -52,6 +51,16 @@ class JenisAlatController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
+    }
+
+    public function checkNama(Request $request)
+    {
+        $exists = JenisAlat::where('nama_jenis', strtolower($request->nama_jenis))
+            ->exists();
+
+        return response()->json([
+            'exist' => $exists
+        ]);
     }
 
     public function delete($id)

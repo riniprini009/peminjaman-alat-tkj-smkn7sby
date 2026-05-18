@@ -27,7 +27,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard Siswa</a>
+                                    <a href="{{ route('dashboardSiswa.index') }}">Dashboard Siswa</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Daftar Alat
@@ -41,7 +41,7 @@
                 <div class="row mx-0 gx-3 gy-2">
 
                     <!-- TANGGAL -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 box-input">
                         <label class="filter-label">Tanggal Pakai</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- JAM -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 box-input">
                         <label class="filter-label">Jam Pakai</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -73,8 +73,6 @@
                                 <option value="10:45:00">10:45</option>
                                 <option value="11:30:00">11:30</option>
                                 <option value="12:00:00">12:00</option>
-                                <option value="10:55:00">10:55</option>
-                                <option value="23:17:00">23:17</option>
                                 <option value="13:45:00">13:45</option>
                                 <option value="14:30:00">14:30</option>
                                 <option value="15:15:00">15:15</option>
@@ -83,7 +81,7 @@
                     </div>
 
                     <!-- JENIS -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 box-input">
                         <label class="filter-label">Jenis</label>
                         <select id="filterJenis" class="form-control form-input">
                             <option value="">All Jenis</option>
@@ -94,7 +92,7 @@
                     </div>
 
                     <!-- TIPE -->
-                    <div class="col-md-3">
+                    <div class="col-md-3 box-input">
                         <label class="filter-label">Tipe</label>
                         <select id="filterTipe" class="form-control form-input">
                             <option value="">All Tipe</option>
@@ -135,7 +133,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 d-flex justify-content-between align-items-center mb-1">
+                            <div class="col-12 d-flex justify-content-between align-items-center mb-1 box-search">
                                 <div id="show-entries" class="ml-0"></div>
                                 <div class="d-flex align-items-center">
                                     <span class="mr-2"><i class="bi bi-list"></i></span>
@@ -219,7 +217,7 @@
                         <div class="card border-0" style="background: #e9edf9b1 !important; border-radius: 22px;">
                             <div class="row clearfix mt-4 mb-3 mx-3">
                                 @foreach ($tipes as $tipe)
-                                    <div class="col-lg-3 col-md-6 col-sm-12 mb-30">
+                                    <div class="col-lg-3 col-md-6 col-sm-12 mb-30 box-alat-card">
                                         <div class="da-card alat-card" data-id="{{ $tipe->id_tipe }}"
                                             data-jenis="{{ strtolower($tipe->jenisAlat->nama_jenis) }}"
                                             data-nama="{{ strtolower($tipe->nama_tipe) }}">

@@ -1,4 +1,3 @@
-
 let filterState = {
     kelas: "",
 };
@@ -35,8 +34,6 @@ $(document).ready(function () {
     });
 
     // ===================== SEARCH =====================
-
-   
 
     // ===================== DROPDOWN FILTER =====================
     $("#filterKelas").on("change", function () {
@@ -75,6 +72,13 @@ $(document).ready(function () {
         $("#modal-edit-data-siswa").modal("show");
     });
 
+    $("#modal-edit-data-siswa").on("hidden.bs.modal", function () {
+        // reset error NIS
+        $("#error-nis").addClass("d-none").text("");
+
+        // reset tombol submit
+        $("#btn-edit").prop("disabled", false);
+    });
+
     // ========================= DELETE =========================
-   
 });

@@ -73,6 +73,8 @@ class SiswaController extends Controller
             ],
             'kelas' => 'required|string',
             'jenis_kelamin' => 'required|string|in:laki-laki,perempuan'
+        ], [
+            'nis.unique' => 'NIS sudah digunakan',
         ]);
 
         $siswa = Siswa::findOrFail($idSiswa);
@@ -97,6 +99,20 @@ class SiswaController extends Controller
             return redirect()->back()->with('error', $e->getMessage());
         }
     }
+
+   public function checkNis(Request $request)
+{
+    $nis = $request->nis;
+    $id = $request->id_siswa;
+
+    $exists = Siswa::where('nis', $nis)
+        ->when($id, fn($q) => $q->where('id_siswa', '!=', $id))
+        ->exists();
+
+    return response()->json([
+        'exist' => $exists
+    ]);
+}
 
     public function delete($id)
     {

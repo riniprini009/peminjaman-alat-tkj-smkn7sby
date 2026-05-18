@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title')</title>
 
     <!-- Site favicon -->
@@ -223,7 +224,7 @@
 
     <div class="left-side-bar sidebar-light">
         <div class="brand-logo">
-            <a href="index.html">
+            <a href="{{ route('dashboardAdmin.index') }}">
                 <img src="{{ asset('logo.png') }}" alt="" class="dark-logo" />
                 <img src="{{ asset('logo.png') }}" alt="" class="light-logo" />
             </a>

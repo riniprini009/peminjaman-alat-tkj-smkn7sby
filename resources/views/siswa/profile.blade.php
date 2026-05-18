@@ -219,9 +219,9 @@
             width: 180px;
             height: 180px;
             /* background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 70%);
-                                            top: -60px;
-                                            right: -60px;
-                                            filter: blur(10px); */
+                                                            top: -60px;
+                                                            right: -60px;
+                                                            filter: blur(10px); */
         }
 
         /* HOVER CARD */
@@ -579,7 +579,15 @@
             box-shadow: 0 4px 10px rgba(34, 197, 94, 0.2);
         }
 
- 
+        @media(max-width: 992px) {
+            .profile-card {
+                padding: 18px ;
+            }
+
+            .box-edit-username {
+                margin-top: 18px;
+            }
+        }
     </style>
 @endsection
 
@@ -595,7 +603,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardSiswa.index') }}">Dashboard Siswa</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Profil
@@ -663,14 +671,16 @@
                                     <div class="row g-2">
                                         <div class="col-12 pb-3">
                                             <input type="password" class="form-control" placeholder="Password baru"
-                                                name="password_baru">
+                                                name="password_baru" id="password_baru">
                                         </div>
                                         <div class="col-12 pb-3">
                                             <input type="password" class="form-control" placeholder="Konfirmasi password"
-                                                name="conf_pwd">
+                                                name="conf_pwd" id="conf_pwd">
+                                            <small id="pwd-error" class="text-danger d-none "></small>
                                         </div>
+
                                         <div class="col-12 mt-1">
-                                            <button class="btn btn-universal w-100" type="submit">
+                                            <button class="btn btn-universal w-100" type="submit" id="btn-update-password">
                                                 Update Password
                                             </button>
                                         </div>
@@ -681,7 +691,7 @@
                         </div>
 
                         <!-- USERNAME (KANAN) -->
-                        <div class="col-md-6">
+                        <div class="col-md-6 box-edit-username">
                             <div class="form-section h-100 m-0">
                                 <div class="form-title">🧑‍💻 Ganti Username</div>
 
@@ -692,14 +702,17 @@
                                     <div class="row g-2">
                                         <div class="col-12 pb-3">
                                             <input type="text" class="form-control" placeholder="Username baru"
-                                                name="username_baru">
+                                                id="username_baru" name="username_baru">
                                         </div>
                                         <div class="col-12 pb-3">
                                             <input type="text" class="form-control" placeholder="Konfirmasi username"
-                                                name="conf_username">
+                                                id="conf_username" name="conf_username">
+                                            <small id="conf-username-error" class="text-danger d-none ml-1"></small>
                                         </div>
+
                                         <div class="col-12 mt-1">
-                                            <button class="btn btn-universal-back w-100" type="submit">
+                                            <button class="btn btn-universal-back w-100" type="submit"
+                                                id="btn-update-username">
                                                 Update Username
                                             </button>
                                         </div>
@@ -736,6 +749,7 @@
 @push('scripts')
     {{-- <script src="{{ asset('deskap/src/plugins/sweetalert2/sweetalert2.all.js') }}"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{{ asset('js/profile.js') }}"></script>
     <script>
         @if (session('update_success'))
             $('#update-success-text').html(

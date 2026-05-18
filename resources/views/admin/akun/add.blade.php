@@ -18,13 +18,11 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item d-flex align-items-center gap-1">
                                     <i class="fa-solid fa-house"></i>
-                                    <a href="index.html">Dashboard</a>
+                                    <a href="{{ route('dashboardAdmin.index') }}">Dashboard Admin</a>
                                 </li>
+                      
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">User</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="index.html">Data Akun User</a>
+                                    <a href="{{route('akun.index')}}">Data Akun User</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Tambah Data Akun User
@@ -44,20 +42,21 @@
                             <div class="card-body">
                                 <form action="{{ route('akun.store') }}" method="post">
                                     @csrf
-                                    <div class="form-group mb-0">
+                                    <div class="form-group mb-3">
                                         <label for="username">Username</label>
-                                        <div class="input-group mb-3">
+                                        <div class="input-group mb-0">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="bi bi-person-circle"></i></span>
                                             </div>
                                             <input type="text" class="form-control" id="username" name="username"
                                                 placeholder="Masukkan username" style="border-radius: 10px;" required>
-                                            <small id="username-error" class="text-danger d-none"></small>
+
                                         </div>
+                                         <small id="username-error" class="text-danger d-none ml-1"></small>
                                     </div>
-                                    <div class="form-group mb-0">
+                                    <div class="form-group mb-3">
                                         <label for="password">Password</label>
-                                        <div class="input-group mb-3">
+                                        <div class="input-group mb-0">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="bi bi-key"></i></span>
                                             </div>
@@ -65,22 +64,23 @@
                                                 placeholder="Masukkan password" style="border-radius: 10px;" required>
                                         </div>
                                     </div>
-                                    <div class="form-group mb-0">
+                                    <div class="form-group mb-3">
                                         <label for="conf-pwd">Konfirmasi Password</label>
-                                        <div class="input-group mb-3">
+                                        <div class="input-group mb-0">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="bi bi-shield-lock"></i></i></span>
                                             </div>
                                             <input type="password" class="form-control" id="conf-pwd" name="conf_pwd"
                                                 placeholder="Masukkan konfirmasi password" style="border-radius: 10px;"
                                                 required>
-                                            <small id="pwd-error" class="text-danger d-none"></small>
+                                           
                                         </div>
+                                         <small id="pwd-error" class="text-danger d-none ml-1"></small>
                                     </div>
 
-                                    <div class="form-group mb-0">
+                                    <div class="form-group mb-3">
                                         <label for="role">Role</label>
-                                        <div class="input-group mb-3">
+                                        <div class="input-group mb-0">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="bi bi-people"></i></span>
                                             </div>
@@ -98,7 +98,7 @@
                                             <i class="fa fa-times"></i>
                                             Batal
                                         </a>
-                                        <button type="submit" class="btn-action btn-universal">
+                                        <button type="submit" class="btn btn-universal" id="btn-submit">
                                             <i class="fa fa-check"></i>
                                             Submit
                                         </button>
@@ -115,6 +115,7 @@
 @endsection
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="{{ asset('js/addAkunUser.js') }}"></script>
     <script>
         $(document).ready(function() {
             @if (session('error'))

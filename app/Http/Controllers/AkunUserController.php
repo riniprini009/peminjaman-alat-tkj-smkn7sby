@@ -23,8 +23,8 @@ class AkunUserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'username' => 'required|string|unique:akun_user,username|max:10',
-            'password' => 'required|max:8',
+            'username' => 'required|string|unique:akun_user,username',
+            'password' => 'required',
             'role' => 'required|in:admin,siswa,kabeng',
         ]);
 
@@ -47,14 +47,15 @@ class AkunUserController extends Controller
 
     public function update(Request $request, $idAkunUser)
     {
+        
         $request->validate([
             'username' => [
                 'required',
                 Rule::unique('akun_user', 'username')->ignore($idAkunUser, 'id_akun_user')
             ],
             'role' => 'required|in:admin,siswa,kabeng',
-            'password_baru' => 'nullable|string|max:8|same:conf_pwd',
-            'conf_pwd' => 'nullable|string|max:8|same:password_baru'
+            'password_baru' => 'nullable|string|same:conf_pwd',
+            'conf_pwd' => 'nullable|string|same:password_baru'
         ]);
         try {
             $akun = AkunUser::findOrFail($idAkunUser);
@@ -74,6 +75,22 @@ class AkunUserController extends Controller
         } catch (\Exception $e) {
             return redirect()->back()->with('error', $e->getMessage());
         }
+    }
+
+    public function checkUsername(Request $request)
+    {
+        $query = AkunUser::where('username', $request->username);
+
+        // ignore akun sendiri saat edit
+        if ($request->id_akun_user) {
+            $query->where('id_akun_user', '!=', $request->id_akun_user);
+        }
+
+        $exist = $query->exists();
+
+        return response()->json([
+            'exist' => $exist
+        ]);
     }
 
     public function delete($idAkunUser)
@@ -111,11 +128,8 @@ class AkunUserController extends Controller
     public function updateUsernameProfile(Request $request, $idAkunUser)
     {
         $request->validate([
-            'username_baru' => [
-                'required',
-                'max:8',
-            ],
-            'conf_username' => 'required|max:8|same:username_baru',
+            'username_baru' => 'required',
+            'conf_username' => 'required|same:username_baru',
         ]);
 
         try {
@@ -124,7 +138,7 @@ class AkunUserController extends Controller
             $akun->update([
                 'username' => $username
             ]);
-             return redirect()
+            return redirect()
                 ->back()
                 ->with('update_success', 'Username berhasil diubah');
         } catch (\Exception $e) {
@@ -135,8 +149,8 @@ class AkunUserController extends Controller
     public function updatePasswordProfile(Request $request, $idAkunUser)
     {
         $request->validate([
-            'password_baru' => 'required|max:8',
-            'conf_pwd' => 'required|max:8|same:password_baru',
+            'password_baru' => 'required',
+            'conf_pwd' => 'required|same:password_baru',
         ]);
 
         try {

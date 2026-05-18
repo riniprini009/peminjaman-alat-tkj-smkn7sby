@@ -13,6 +13,19 @@
 @endsection
 
 @section('content')
+    @php
+        function badgeClass($kondisi)
+        {
+            if ($kondisi == 'rusak') {
+                return 'badge-soft-danger';
+            } elseif ($kondisi == 'perlu perbaikan') {
+                return 'badge-soft-warning';
+            } else {
+                return 'badge-soft-dark';
+            }
+        }
+
+    @endphp
     <div class="pd-ltr-20 xs-pd-20-10">
         <div class="min-height-200px">
             <div class="page-header">
@@ -24,7 +37,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardKabeng.index') }}">Dashboard Kabeng</a>
                                 </li>
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
                                     <a href="#">Laporan</a>
@@ -83,19 +96,21 @@
                                         <td>
                                             <div class="kondisi d-flex gap-1 flex-wrap">
                                                 @if ($item->total_rusak > 0)
-                                                    <span class="badge badge-danger mr-2">
+                                                    <span
+                                                        class="badge {{ badgeClass('rusak') }} px-3 py-2 rounded-pill mr-2">
                                                         Rusak: {{ $item->total_rusak }}
                                                     </span>
                                                 @endif
 
                                                 @if ($item->total_perbaikan > 0)
-                                                    <span class="badge badge-warning mr-2">
+                                                    <span
+                                                        class="badge {{ badgeClass('perlu perbaikan') }} px-3 py-2 rounded-pill mr-2">
                                                         Perbaikan: {{ $item->total_perbaikan }}
                                                     </span>
                                                 @endif
 
                                                 @if ($item->total_hilang > 0)
-                                                    <span class="badge badge-dark mr-2">
+                                                    <span class="badge {{ badgeClass('hilang') }} px-3 py-2 rounded-pill mr-2">
                                                         Hilang: {{ $item->total_hilang }}
                                                     </span>
                                                 @endif

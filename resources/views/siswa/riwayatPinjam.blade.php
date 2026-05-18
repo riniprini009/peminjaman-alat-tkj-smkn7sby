@@ -24,7 +24,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardSiswa.index') }}">Dashboard Siswa</a>
                                 </li>
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Data Riwayat Peminjaman
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="row mb-4 stat-wrapper">
-                <div class="col-md-4 mb-2">
+                <div class="col-md-4 mb-2 box">
                     <div class="stat-card-pro totalPinjam">
                         <i class="fas fa-chart-line bg-icon"></i>
                         <div class="stat-top">
@@ -44,7 +44,7 @@
                         <h2 id="totalPinjam">0</h2>
                     </div>
                 </div>
-                <div class="col-md-4 mb-2">
+                <div class="col-md-4 mb-2 box">
                     <div class="stat-card-pro tepatWaktu">
                         <i class="fas fa-check-circle bg-icon"></i>
                         <div class="stat-top">
@@ -53,7 +53,7 @@
                         <h2 id="totalTepatWaktu">0</h2>
                     </div>
                 </div>
-                <div class="col-md-4 mb-2">
+                <div class="col-md-4 mb-2 box">
                     <div class="stat-card-pro terlambat">
                         <i class="fas fa-clock bg-icon"></i>
                         <div class="stat-top">

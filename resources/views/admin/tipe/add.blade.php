@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/universal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/add.css') }}">
-  
+
     <link rel="stylesheet" href="{{ asset('css/button.css') }}">
 @endsection
 @section('content')
@@ -19,14 +19,12 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="fa-solid fa-house"></i>
-                                    <a href="index.html">Dashboard</a>
+                                    <a href="{{ route('dashboardAdmin.index') }}">Dashboard Admin</a>
                                 </li>
                                 <li class="breadcrumb-item">
-                                    <a href="index.html">User</a>
+                                    <a href="{{ route('tipe.index') }}">Data Tipe Alat</a>
                                 </li>
-                                <li class="breadcrumb-item">
-                                    <a href="index.html">Data Tipe Alat</a>
-                                </li>
+                            
                                 <li class="breadcrumb-item active" aria-current="page">
                                     Tambah Data Tipe Alat
                                 </li>
@@ -57,7 +55,8 @@
                                                 style="border-radius: 10px;">
                                                 <option value="" disabled selected>--Pilih--</option>
                                                 @foreach ($jenis as $jns)
-                                                    <option value="{{ $jns->id_jenis }}">{{ ucwords($jns->nama_jenis) }}</option>
+                                                    <option value="{{ $jns->id_jenis }}">{{ ucwords($jns->nama_jenis) }}
+                                                    </option>
                                                 @endforeach
                                             </select>
 
@@ -74,7 +73,7 @@
                                                 placeholder="Masukkan Nama Tipe" style="border-radius: 10px;" required>
 
                                         </div>
-                                        <small id="add-error-tipe" style="color:red; display:none;">
+                                        <small id="error-add-tipe" class="text-danger d-none ml-1"></small>
 
                                         </small>
                                     </div>
@@ -89,6 +88,7 @@
                                                 required>
 
                                         </div>
+                                        <small id="error-stok" class="text-danger d-none ml-1"></small>
                                     </div>
                                     <div class="form-group mb-0">
                                         <label for="lokasi-rak">Lokasi Rak</label>
@@ -115,7 +115,7 @@
                                             <i class="fa fa-times"></i>
                                             Batal
                                         </a>
-                                        <button type="submit" class="btn-action btn-universal">
+                                        <button type="submit" class="btn btn-universal">
                                             <i class="fa fa-check"></i>
                                             Submit
                                         </button>
@@ -136,6 +136,7 @@
 @push('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="{{ asset('deskap/src/plugins/switchery/switchery.min.js') }}"></script>
+    <script src="{{ asset('js/addTipe.js') }}"></script>
     <script>
         $(document).ready(function() {
             @if (session('error'))

@@ -36,6 +36,7 @@ Route::middleware(['role:admin'])->group(function () {
     Route::get('/dashboard-admin', [AlatController::class, 'dashboardAdmin'])->name('dashboardAdmin.index');
     Route::get('/data-siswa', [SiswaController::class, 'siswaIndex'])->name('siswa.index');
     Route::view('/add-siswa', 'admin.siswa.add')->name('siswa.add');
+    Route::post('/siswa/check-nis', [SiswaController::class, 'checkNis']);
     Route::post('/store-siswa', [SiswaController::class, 'store'])->name('siswa.store');
     Route::put('/update-siswa/{id}', [SiswaController::class, 'update'])->name('siswa.update');
     Route::delete('delete-siswa/{id}', [SiswaController::class, 'delete'])->name('siswa.delete');
@@ -46,12 +47,14 @@ Route::middleware(['role:admin'])->group(function () {
     Route::view('add-akun', 'admin.akun.add')->name('akun.add');
     Route::post('/store-akun', [AkunUserController::class, 'store'])->name('akun.store');
     Route::put('/update-akun/{id}', [AkunUserController::class, 'update'])->name('akun.update');
+
     Route::delete('/delete-akun/{id}', [AkunUserController::class, 'delete'])->name('akun.delete');
     Route::get('/export-akun-user', [AkunUserController::class, 'exportPdf'])->name('akun.export');
 
     Route::get('/data-jenis', [JenisAlatController::class, 'jenisIndex'])->name('jenis.index');
     Route::post('/store-jenis', [JenisAlatController::class, 'store'])->name('jenis.store');
     Route::put('/update-jenis/{id}', [JenisAlatController::class, 'update'])->name('jenis.update');
+    Route::post('/jenis/check-nama-jenis', [JenisAlatController::class, 'checkNama']);
     Route::delete('/delete-jenis/{id}', [JenisAlatController::class, 'delete'])->name('jenis.delete');
     Route::get('/export-jenis', [JenisAlatController::class, 'exportPdf'])->name('jenis.export');
 
@@ -59,6 +62,7 @@ Route::middleware(['role:admin'])->group(function () {
     Route::get('/add-tipe', [TipeAlatController::class, 'add'])->name('tipe.add');
     Route::post('/store-tipe', [TipeAlatController::class, 'store'])->name('tipe.store');
     Route::put('/update-tipe/{id}', [TipeAlatController::class, 'update'])->name('tipe.update');
+    Route::post('/tipe/check-nama-tipe', [TipeAlatController::class, 'checkNamaTipe'])->name('tipe.checkNama');
     Route::delete('/delete-tipe/{id}', [TipeAlatController::class, 'delete'])->name('tipe.delete');
     Route::get('/export-tipe', [TipeAlatController::class, 'exportPdf'])->name('tipe.export');
 
@@ -105,6 +109,7 @@ Route::middleware(['role:kabeng'])->group(function () {
     Route::get('/export-kondisi', [AlatController::class, 'exportKondisi'])->name('kondisi.export');
 });
 
+    Route::post('/akun/check-username', [AkunUserController::class, 'checkUsername']);
 Route::get('/check-alat', [AlatController::class, 'check'])->name('alat.check');
 
 Route::get('/scan/{kode}', [PeminjamanController::class, 'scanQr'])
@@ -146,6 +151,6 @@ Route::post('/save-token', function (Request $request) {
 })->middleware('auth');
 
 
-Route::get('/imagick-test', function () {
-    return extension_loaded('imagick') ? 'Imagick OK' : 'No Imagick';
-});
+// Route::get('/imagick-test', function () {
+//     return extension_loaded('imagick') ? 'Imagick OK' : 'No Imagick';
+// });

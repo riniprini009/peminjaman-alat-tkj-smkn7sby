@@ -108,6 +108,24 @@ class TipeAlatController extends Controller
         }
     }
 
+    public function checkNamaTipe(Request $request)
+    {
+        $nama = $request->nama_tipe;
+        $id = $request->id_tipe;
+
+        $query = TipeAlat::where('nama_tipe', $nama);
+
+        // kalau sedang edit, kecualikan data dirinya sendiri
+        if ($id) {
+            $query->where('id_tipe', '!=', $id);
+        }
+
+        $exists = $query->exists();
+
+        return response()->json([
+            'exist' => $exists
+        ]);
+    }
     public function delete($id)
     {
         try {

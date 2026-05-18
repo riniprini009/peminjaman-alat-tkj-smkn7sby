@@ -26,7 +26,7 @@
                         <nav aria-label="breadcrumb" role="navigation">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><i class="bx bx-home"></i>
-                                    <a href="#">Dashboard</a>
+                                    <a href="{{ route('dashboardAdmin.index') }}">Dashboard Admin</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="#">User</a>
@@ -161,10 +161,8 @@
                     </div>
                 </div>
                 <div class="modal-footer justify-content-between">
-                    <button class="btn btn-light btn-back"><i
-                                    class="bi bi-arrow-counterclockwise"></i>Reset</button>
-                    <button class="btn btn-primary btn-universal"><i
-                                    class="bi bi-check2-circle"></i>Terapkan</button>
+                    <button class="btn btn-light btn-back" id="btnResetFilter"><i class="bi bi-arrow-counterclockwise" ></i>Reset</button>
+                    <button class="btn btn-primary btn-universal" id="btnApplyFilter"><i class="bi bi-check2-circle" ></i>Terapkan</button>
                 </div>
             </div>
         </div>
@@ -225,6 +223,8 @@
                                                                 <input type="text" class="form-control" id="username"
                                                                     name="username" placeholder="Masukkan Username"
                                                                     required>
+                                                                <small id="edit-username-error"
+                                                                    class="text-danger d-none ml-1"></small>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row align-items-center">
@@ -279,6 +279,7 @@
                                                                 <input type="password" class="form-control"
                                                                     id="conf-pwd" name="conf_pwd"
                                                                     placeholder="Masukkan konfirmasi password">
+                                                                    <small id="edit-pwd-error" class="text-danger d-none"></small>
                                                             </div>
                                                         </div>
                                                         {{-- <div class="modal-footer border-0 p-0">

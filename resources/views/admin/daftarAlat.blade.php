@@ -269,17 +269,5 @@
     <script src="{{ asset('js/daftarAlat.js') }}"></script>
 
 
-    <script>
-        @if (session('success'))
-            toastr.success(
-                "{{ session('success') }}",
-                "Berhasil", {
-                    progressBar: true,
-                    closeButton: true,
-                    timeOut: 3000,
-                    positionClass: "toast-top-right"
-                }
-            );
-        @endif
-    </script>
+  
 @endpush
