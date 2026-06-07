@@ -99,7 +99,7 @@
                                         <td>{{ $tipe->stok }}</td>
                                         <td>{{ ucwords($tipe->lokasi_rak) }}</td>
                                         <td>
-                                            <div class="d-flex align-items-center gap-2">
+                                            <div class="d-flex align-items-center gap-2 action-button">
                                                 <a href="{{ route('detail.index', $tipe->id_tipe) }}"
                                                     class="btn btn-icon btn-view" title="Lihat Detail">
                                                     <i class="fa-solid fa-eye"></i>
@@ -141,7 +141,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="filter-card mb-3">
+                    <div class="filter-card">
                         <div class="filter-label-wrapper">
                             <i class="fa-solid fa-box filter-icon"></i>
                             <div class="filter-label">Jenis Alat</div>

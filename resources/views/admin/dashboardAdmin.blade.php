@@ -57,7 +57,7 @@
             </div>
 
             <div class="row g-3 m-0">
-                <div class="col-md-7 mb-0 px-2 box-chart">
+                <div class="col-md-7 mb-0 pl-0 pr-2 box-chart">
                     <div class="pd-20 card-kondisi card-box">
                         <h4 class="h4 text-dark d-flex align-items-center gap-2">
                             Distribusi Kondisi Alat
@@ -93,7 +93,7 @@
 
                     </div>
                 </div>
-                <div class="col-md-5 mb-0 px-2 box-permintaan">
+                <div class="col-md-5 mb-0 pl-2 pr-0 box-permintaan">
                     <div class="pd-20 card-box height-100-p booking-card">
 
                         <h4 class="h4 text-dark d-flex align-items-center gap-2">

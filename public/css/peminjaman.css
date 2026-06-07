@@ -430,6 +430,11 @@
     .table-row input:nth-child(5) {
         display: none;
     }
+
+    .form-control[type="search"] {
+        height: 34px;
+    }
+
 }
 
 #modal-validasi .modal-dialog {

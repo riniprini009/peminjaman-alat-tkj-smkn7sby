@@ -13,7 +13,6 @@ class SiswaImport implements ToModel, WithHeadingRow, SkipsEmptyRows
 {
     public function model(array $row)
     {
-        // 🔥 VALIDASI WAJIB (hindari null error)
         if (
             empty($row['nis']) ||
             empty($row['nama']) ||
@@ -24,16 +23,14 @@ class SiswaImport implements ToModel, WithHeadingRow, SkipsEmptyRows
             return null;
         }
 
-        // Cari siswa berdasarkan NIS
         $siswa = Siswa::where('nis', $row['nis'])->first();
 
         // ==============================
         // JIKA BELUM ADA → BUAT BARU
         // ==============================
         if (!$siswa) {
-
             $akun = AkunUser::create([
-                'username' => (string) $row['nis'], // pastikan string
+                'username' => (string) $row['nis'],
                 'password' => Hash::make($row['nis']),
                 'role' => 'siswa',
             ]);
@@ -58,7 +55,6 @@ class SiswaImport implements ToModel, WithHeadingRow, SkipsEmptyRows
             'tahun_masuk' => strtolower($row['tahun_masuk']),
         ]);
 
-        // update akun jika relasi ada
         if ($siswa->akunUser) {
             $siswa->akunUser->update([
                 'username' => (string) $row['nis'],
@@ -67,6 +63,6 @@ class SiswaImport implements ToModel, WithHeadingRow, SkipsEmptyRows
             ]);
         }
 
-        return null; // karena update
+        return null;
     }
 }

@@ -110,7 +110,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="filter-card mb-3">
+                    <div class="filter-card">
                         <div class="filter-label-wrapper">
                             <i class="fa-solid fa-box filter-icon"></i>
                             <div class="filter-label">Jenis Alat</div>

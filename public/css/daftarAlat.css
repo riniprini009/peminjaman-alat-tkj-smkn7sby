@@ -787,8 +787,8 @@ body.grid-mode .icon-grid {
 }
 
 .box-ketersediaan {
-    /* display: none; */
-    display: block;
+    display: none;
+    /* display: block; */
 }
 .box-ketersediaan.active {
     display: block;
@@ -920,15 +920,16 @@ body.grid-mode .icon-grid {
     }
 
     span.title {
-        font-size: 10px !important;
+        font-size: 12px !important;
     }
 
     #info-tanggal-jam {
-        padding: 6px 9px;
+        padding: 6px 11px;
+        width: 100%;
     }
     .chip {
-        font-size: 9px;
-        padding: 3px 8px;
+        font-size: 10.5px;
+        padding: 5px 11px;
     }
 
     .box-search {
@@ -938,7 +939,7 @@ body.grid-mode .icon-grid {
 
     #searchInput {
         padding: 2px 0px 2px 40px;
-        height: 35px !important;
+        height: 34px !important;
     }
 
     .search-wrapper {
@@ -947,7 +948,7 @@ body.grid-mode .icon-grid {
 
     .status-pill {
         font-size: 10px;
-        padding: 2px 8px;
+        padding: 4px 8px;
     }
 
     .box-waktu-pakai {
@@ -955,8 +956,8 @@ body.grid-mode .icon-grid {
     }
 
     .flex-shrink-0 .img-tipe {
-        width: 30px !important;
-        height: 30px !important;
+        width: 36px !important;
+        height: 36px !important;
     }
 
     .btn-pinjam,
@@ -975,11 +976,11 @@ body.grid-mode .icon-grid {
     }
 
     .search-box-wrapper::placeholder {
-        font-size: 11.5px !important;
+        font-size: 12px !important;
     }
 
     .view-toggle {
-        gap: 6px;
+        gap: 1px;
         padding: 4px 8px;
         border-radius: 10px;
     }
@@ -987,7 +988,7 @@ body.grid-mode .icon-grid {
     .view-icon {
         width: 28px;
         height: 28px;
-        font-size: 14px;
+        font-size: 11.5px !important;
         border-radius: 8px;
     }
 
@@ -1055,4 +1056,9 @@ body.grid-mode .icon-grid {
 .view-icon.active {
     background: rgba(34, 197, 94, 0.12);
     color: #22c55e;
+}
+
+.form-control {
+    color: #6c757d !important;
+    font-weight: 500;
 }

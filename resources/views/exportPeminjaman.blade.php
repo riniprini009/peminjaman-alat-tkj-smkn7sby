@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Laporan Peminjaman</title>
@@ -21,9 +20,7 @@
         }
     </style>
 </head>
-
 <body>
-
     <div class="kop">
         <div class="kop-left">
             <img src="{{ public_path('logo-smkn7-resmi.jpg') }}" class="logo">
@@ -62,7 +59,6 @@
                 <th style="width:5%;">No.</th>
                 <th style="width:20%;">Nama Siswa</th>
                 <th style="width:15%;">Kelas</th>
-
                 <th style="width:15%;">Tipe Alat</th>
                 <th style="width:15%;">Tanggal Pinjam</th>
                 <th style="width:15%;">Keterlambatan</th>
@@ -74,23 +70,14 @@
                     <td>{{ $index + 1 }}.</td>
                     <td class="text-left">{{ ucwords($item->siswa->nama_siswa) }}</td>
                     <td>{{ strtoupper($item->siswa->kelas) }}</td>
-
-                    {{-- JENIS ALAT (BISA LEBIH DARI 1) --}}
-
-
-                    {{-- TIPE ALAT (DETAIL) --}}
                     <td class="text-left">
-                        {{-- <ul style="margin:0; padding-left:15px;"> --}}
                         @foreach ($item->tipeAlat as $alat)
                             - {{ ucwords($alat->nama_tipe) }}
                         @endforeach
-                        {{-- </ul> --}}
                     </td>
-
                     <td>
                         {{ \Carbon\Carbon::parse($item->tanggal_mulai)->format('d M Y') }}
                     </td>
-
                     <td>
                         @if ($item->is_terlambat == 1)
                             Terlambat
@@ -103,5 +90,4 @@
         </tbody>
     </table>
 </body>
-
 </html>

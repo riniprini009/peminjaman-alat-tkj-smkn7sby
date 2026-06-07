@@ -57,7 +57,7 @@
             </div>
 
             <div class="row g-3">
-                <div class="col-md-6 mb-0">
+                <div class="col-md-6 mb-0 box-jenis">
                     <div class="pd-20 card-kondisi card-box card-jenis">
                         <h4 class="h4 text-dark d-flex align-items-center gap-2">
                             Distribusi Jenis Alat
@@ -108,7 +108,7 @@
                 </div>
 
             </div>
-            <div class="pd-20 card-box">
+            <div class="pd-20 card-box box-peminjaman">
                 <h4 class="h4 text-dark">
                     Peminjaman Tiap Bulan
                 </h4>

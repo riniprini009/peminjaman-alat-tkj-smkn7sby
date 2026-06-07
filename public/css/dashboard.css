@@ -366,8 +366,6 @@
         grid-template-columns: repeat(1, 1fr);
     }
 
-
-
     .dashboard-grid {
         grid-template-columns: 1fr;
     }
@@ -404,15 +402,38 @@
         font-size: 11.5px !important;
     }
 
-    .card-alat-pinjam {
+    .box-jenis,
+    .card-alat-pinjam,
+    .box-peminjaman {
         padding: 0 15px !important;
     }
 
     .box-permintaan,
-    .box-chart{
+    .box-chart {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+
+    .input-with-icon,
+    #btn-tracking-search,
+    #btn-booking-search,
+    .form-control {
+        height: 36px !important;
+    }
+
+    .lacak-content {
+        padding: 0 10px;
+    }
+
+    .booking-card h4 {
+        font-size: 17px !important;
+    }
+
+    #tanggalBadge {
+        margin-left: 12px;
+    }
+
+    
 }
 
 @media (max-width: 992px) {

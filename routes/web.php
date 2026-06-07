@@ -11,10 +11,8 @@ use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\TipeAlatController;
 use App\Models\AkunUser;
-use App\Services\FCMService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'login');
@@ -70,7 +68,6 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::put('/update-password/{id}', [AkunUserController::class, 'updatePasswordProfile'])->name('profile.updatePassword');
     Route::put('/update-username/{id}', [AkunUserController::class, 'updateUsernameProfile'])->name('profile.updateUsername');
 
-    // Route::get('/daftar-alat', [DaftarAlatController::class, 'indexSiswa'])->name('alat.index');
     Route::post('/peminjaman/store-tipe', [PeminjamanController::class, 'prosesPemesananAlat'])->name('peminjamanTipe.store');
 
     Route::get('/peminjaman', [PeminjamanController::class, 'siswaIndex'])->name('peminjamanSiswa.index');
@@ -123,18 +120,6 @@ Route::middleware(['auth', 'role:admin,kabeng'])->group(function () {
 
 
 
-// Route::post('/save-token', function (Request $request) {
-//     $user = Auth::user();
-
-//     AkunUser::where('id_akun_user', $user->id_akun_user)
-//         ->update([
-//             'fcm_token' => $request->input('token')
-//         ]);
-
-//     return response()->json([
-//         'success' => true
-//     ]);
-// })->middleware('auth', 'role:siswa');
 
 
 // Route::get('/detail-alat/{kode}', function ($kode) {

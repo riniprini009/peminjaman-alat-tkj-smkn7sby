@@ -1,34 +1,20 @@
-/* ===== PAGE HEADER WRAPPER ===== */
 .page-header {
     padding: 20px 24px;
     margin-bottom: 18px;
-
     background: white;
     backdrop-filter: blur(18px);
-
     -webkit-backdrop-filter: blur(18px);
-
     border-radius: 22px;
-  /* transition: transform 0.35s ease; */
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); */
 }
 
-/* .page-header:hover {
-    transform: translateY(-5px) scale(1.01);
-  
-} */
-
-/* ===== BREADCRUMB ===== */
 .breadcrumb {
     margin: 0;
     padding: 0;
     background: transparent;
-
     font-size: 13px;
     font-weight: 500;
 }
 
-/* breadcrumb item spacing */
 .breadcrumb-item + .breadcrumb-item::before {
     content: "›";
     color: #9aa0ac;
@@ -36,19 +22,16 @@
     padding: 0 8px;
 }
 
-/* link breadcrumb */
 .breadcrumb-item a {
     text-decoration: none;
     color: #6b7280;
     transition: 0.25s ease;
 }
 
-/* hover effect */
 .breadcrumb-item a:hover {
     color: #406a9a;
 }
 
-/* active breadcrumb */
 .breadcrumb-item.active {
     color: #406a9a;
     font-weight: 600;
@@ -65,54 +48,32 @@
     align-items: center;
 }
 
-/* ===== SECTION SPACING ===== */
 #basic-horizontal-layouts {
     padding: 24px 0;
 }
 
-/* ===== CARD CONTAINER ===== */
 .card {
     border: 1px solid #e5e7eb !important;
     border-radius: 18px !important;
-
     background: #ffffff !important;
-
-    /* box-shadow:
-        0 18px 50px rgba(15, 23, 42, 0.08),
-        0 2px 8px rgba(15, 23, 42, 0.04); */
- /* transition: transform 0.35s ease; */
     overflow: hidden;
 }
 
-/* .card:hover {
-    transform: translateY(-5px) scale(1.01);
-   
-} */
-
-/* ===== HEADER PREMIUM ===== */
 .card-header {
     position: relative;
-
     padding: 16px 20px;
-
-    background: #2c3e50; /* fallback */
+    background: #2c3e50;
     background: -webkit-linear-gradient(to right, #243447, #2e6f9e);
-
     background: linear-gradient(to right, #243447, #2e6f9e);
-
     border: none !important;
 }
 
-/* title */
 .card-header h5 {
     margin: 0;
-
     font-size: 20px;
     font-weight: 800;
     letter-spacing: 0.5px;
-
     color: #ffffff;
-
     position: relative;
     z-index: 2;
 }
@@ -121,12 +82,10 @@
     margin-right: 13px;
 }
 
-/* ===== CARD BODY ===== */
 .card-body {
     padding: 24px;
 }
 
-/* ===== LABEL ===== */
 label {
     font-size: 13px !important;
     font-weight: 800;
@@ -138,77 +97,58 @@ label {
 .input-group {
     border-radius: 14px;
     overflow: hidden;
-    /* ini penting biar gak pecah */
 }
 
-/* ICON BOX */
 .input-group-prepend .input-group-text {
     background: #2e6f9e;
     border: 1px solid #e5e7eb !important;
     border-right: none !important;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 44px;
     min-height: 42px;
-
     color: #6168ef;
-
     border-radius: 14px 0 0 14px !important;
 }
+
 .input-group-prepend .input-group-text i {
     color: white;
 }
 
-/* INPUT */
 .input-group .form-control {
     border: 1px solid #e5e7eb !important;
     border-left: none !important;
-
     border-radius: 0 14px 14px 0 !important;
-
     padding: 10px 12px;
 }
 
-/* FOCUS ULTRA CLEAN */
 .input-group .form-control:focus {
     border-color: #436c9c !important;
     box-shadow: 0 0 0 3px rgba(97, 104, 239, 0.15) !important;
     z-index: 2;
 }
 
-/* INPUT FIELD */
 .form-control {
     border: 1px solid #e5e7eb !important;
     border-left: none !important;
-
     font-size: 13px;
     padding: 10px 12px;
-
     background: #fff;
-
     color: #111827;
-
     transition: all 0.2s ease;
 }
 
-/* FOCUS STATE */
 .form-control:focus {
     border-color: #6168ef !important;
-
     box-shadow: 0 0 0 4px rgba(97, 104, 239, 0.12) !important;
-
     outline: none;
 }
 
-/* SELECT */
 select.form-control {
     cursor: pointer;
 }
 
-/* ===== BUTTON AREA ===== */
 .form-group.mt-4 {
     margin-top: 22px !important;
 }

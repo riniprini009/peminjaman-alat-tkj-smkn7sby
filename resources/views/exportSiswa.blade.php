@@ -10,16 +10,6 @@
 </head>
 
 <body>
-    @php
-        $bulan = date('n'); // 1-12
-        $tahun = date('Y');
-
-        if ($bulan >= 7) {
-            $ta = $tahun . '/' . ($tahun + 1);
-        } else {
-            $ta = $tahun - 1 . '/' . $tahun;
-        }
-    @endphp
     <div class="kop">
         <div class="kop-left">
             <img src="{{ public_path('logo-smkn7-resmi.jpg') }}" class="logo">

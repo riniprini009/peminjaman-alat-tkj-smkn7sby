@@ -139,7 +139,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="filter-card mb-3">
+                    <div class="filter-card">
                         <div class="filter-label-wrapper">
                             <i class="bi bi-mortarboard-fill filter-icon"></i>
                             <div class="filter-label">Kelas</div>
@@ -155,7 +155,7 @@
                         </select>
                     </div>
                 </div>
-                <div class=" footer modal-footer justify-content-between">
+                <div class="footer modal-footer justify-content-between">
                     <button class="btn btn-light btn-back"><i class="bi bi-arrow-counterclockwise"></i>Reset</button>
                     <button class="btn btn-primary btn-universal"><i class="bi bi-check2-circle"></i>Terapkan</button>
                 </div>

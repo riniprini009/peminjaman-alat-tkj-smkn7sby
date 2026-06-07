@@ -13,7 +13,6 @@ use Illuminate\Validation\Rule;
 
 class AkunUserController extends Controller
 {
-    // ==========================START PART ADMIN================================== //
     public function akunIndex()
     {
         $akuns = AkunUser::where('status_akun', 'aktif')->get();
@@ -123,10 +122,7 @@ class AkunUserController extends Controller
         $pdf = Pdf::loadView('admin.akun.exportPdf', compact('akuns'));
         return $pdf->download('Data Akun User.pdf');
     }
-    // ==========================END PART ADMIN================================== //
 
-
-    // ==========================START PART SISWA================================== //
     public function profile()
     {
         $idSiswa = Auth::user()->siswa->id_siswa;
@@ -181,5 +177,4 @@ class AkunUserController extends Controller
                 ->with('update_error', 'Password gagal diubah!');
         }
     }
-    // ==========================END PART SISWA================================== //
 }

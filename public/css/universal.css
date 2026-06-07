@@ -1243,8 +1243,8 @@ td:last-child {
     }
 
     .badge {
-        padding: 4px 7px !important;
-        font-size: 10px !important;
+        padding: 6px 9px !important;
+        font-size: 10.5px !important;
     }
 
     .table-hover {
@@ -1340,7 +1340,7 @@ td:last-child {
 
     .search-box-wrapper,
     .filter-btn {
-        height: 40px !important;
+        height: 36px !important;
     }
     .btn-import {
         margin-left: 0 !important;
@@ -1348,13 +1348,15 @@ td:last-child {
     }
 
     .btn-edit i,
-    .btn-delete i {
-        font-size: 12px !important;
+    .btn-delete i,
+    .btn-view i {
+        font-size: 11px !important;
     }
 
     .btn-edit,
-    .btn-delete {
-        padding: 3px 6px !important;
+    .btn-delete,
+    .btn-view {
+        padding: 2px 4px !important;
     }
 
     .wrapper-btn {
@@ -1368,6 +1370,31 @@ td:last-child {
 
     .stat-wrapper {
         margin-bottom: 15px !important;
+    }
+
+    .page-header {
+        margin-bottom: 25px;
+    }
+
+    .box-stat {
+        margin-bottom: 12px !important;
+    }
+
+    .title h4 {
+        font-size: 25px !important;
+    }
+
+    .search-wrapper {
+        margin-bottom: 0 !important;
+    }
+
+    .btn-add {
+        width: auto !important;
+        display: inline-block;
+    }
+
+    .form-group > label {
+font-size: 13px !important;
     }
 }
 

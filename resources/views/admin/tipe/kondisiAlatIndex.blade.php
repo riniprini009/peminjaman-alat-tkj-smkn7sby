@@ -154,7 +154,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="filter-card mb-3">
+                    <div class="filter-card">
                         <div class="filter-label-wrapper">
                             <i class="bi bi-people-fill filter-icon"></i>
                             <div class="filter-label">Kondisi Alat</div>

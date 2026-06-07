@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Laporan Kondisi Alat</title>
@@ -48,7 +47,6 @@
         }
     </style>
 </head>
-
 <body>
     <div class="kop">
         <div class="kop-left">
@@ -82,7 +80,6 @@
                     {{ strtoupper($namaJenis) }}
                 </td>
             </tr>
-
             <tr>
                 <th width="8%">No.</th>
                 <th width="35%">Tipe Alat</th>
@@ -90,7 +87,6 @@
                 <th width="24%">Kondisi</th>
                 <th width="15%">Total</th>
             </tr>
-
             @php
                 $no = 1;
                 $groupTipe = $items->groupBy('id_tipe');
@@ -103,7 +99,6 @@
 
                 @foreach ($tipe as $index => $alat)
                     <tr>
-
                         @if ($index == 0)
                             <td rowspan="{{ $rowspan }}" class="text-center">
                                 {{ $no++ }}.

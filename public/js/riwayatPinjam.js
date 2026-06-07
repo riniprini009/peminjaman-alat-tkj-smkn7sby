@@ -200,7 +200,9 @@ $(document).ready(function () {
 
     // ===================== DATE FILTER DATATABLE =====================
     $.fn.dataTable.ext.search.push(function (settings, data) {
-        let dateStr = data[5];
+        console.log("Semua data row:", data);
+        let dateStr = data[4];
+        console.log("Tanggal dari tabel:", dateStr);
         if (!dateStr) return true;
 
         function parseDate(str) {
@@ -223,7 +225,9 @@ $(document).ready(function () {
         }
 
         let rowDate = parseDate(dateStr);
-
+        console.log("rowDate:", rowDate);
+        console.log("start:", filterState.start);
+        console.log("end:", filterState.end);
         let start = filterState.start;
         let end = filterState.end;
 
@@ -266,7 +270,7 @@ $(document).ready(function () {
 
         window.open(url, "_blank");
     };
-    
+
     $(function () {
         $("[title]").tooltip({
             placement: "top",

@@ -150,7 +150,7 @@
                                 style="background: #e9edf9b1 !important; border-radius: 22px;">
                                 <thead class="thead-light">
                                     <tr>
-                                        <th>No.</th>
+                                        <th style="width: 7%">No.</th>
                                         <th>Tipe Alat</th>
                                         <th>Jenis Alat</th>
                                         <th>Ketersediaan</th>

@@ -135,7 +135,7 @@
                 <div class="modal-body">
                     <div class="filter-card mb-3">
                         <div class="filter-label-wrapper">
-                            <i class="bi bi-people-fill filter-icon"></i>
+                            <i class="fa-solid fa-box filter-icon"></i>
                             <div class="filter-label">Jenis Alat</div>
                         </div>
                         <select id="filterJenis" class="form-control filterJenis filter-input">
@@ -147,7 +147,7 @@
                     </div>
                     <div class="filter-card mb-3">
                         <div class="filter-label-wrapper">
-                            <i class="bi bi-people-fill filter-icon"></i>
+                            <i class="bi bi-tools filter-icon"></i>
                             <div class="filter-label">Tipe Alat</div>
                         </div>
                         <select id="filterTipe" class="form-control filterTipe filter-input">
@@ -157,9 +157,9 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="filter-card mb-3">
+                    <div class="filter-card">
                         <div class="filter-label-wrapper">
-                            <i class="bi bi-people-fill filter-icon"></i>
+                            <i class="bi bi-exclamation-triangle filter-icon"></i>
                             <div class="filter-label">Kondisi Alat</div>
                         </div>
                         <select id="filterKondisi" class="form-control filterKondisi filter-input">

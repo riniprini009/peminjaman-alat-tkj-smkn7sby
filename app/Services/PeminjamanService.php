@@ -81,7 +81,6 @@ class PeminjamanService
 
         $result = false;
 
-
         $result = FCMService::send(
             $token,
             "Reminder Pengembalian",

@@ -122,7 +122,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <div class="filter-card mb-3">
+                    <div class="filter-card">
                         <div class="filter-label-wrapper">
                             <i class="bi bi-people-fill filter-icon"></i>
                             <div class="filter-label">Role</div>
@@ -157,8 +157,8 @@
                     </h4>
                     <button type="button" class="close text-white" data-dismiss="modal">×</button>
                 </div>
-                <div class="col-12 mb-30 mt-30">
-                    <div class="pd-20 card-box">
+                <div class="col-12 mb-30 mt-30 box-edit">
+                    <div class="pd-20 card-box card-edit">
                         <div class="tab">
                             <div class="row clearfix">
                                 <div class="col-md-3 col-sm-12 pr-0">
@@ -184,7 +184,7 @@
                                         <input type="hidden" id="id-akun-user" name="id_akun_user">
                                         <div class="tab-content">
                                             <div class="tab-pane fade show active" id="edit-data" role="tabpanel">
-                                                <div class="pd-20">
+                                                <div class="pd-20 box-akun">
                                                     <div class="modal-body-akun" style="border-radius: 20px;">
                                                         <input type="hidden" id="id-akun-user" name="id_akun_user">
                                                         <div class="form-group row align-items-center">
@@ -223,7 +223,7 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade" id="ganti-password" role="tabpanel">
-                                                <div class="pd-20">
+                                                <div class="pd-20 box-akun">
                                                     <div class="modal-body-akun" style="border-radius: 20px;">
                                                         <input type="hidden" id="id-akun-user" name="id_akun_user">
                                                         <div class="form-group row align-items-center mb-3">

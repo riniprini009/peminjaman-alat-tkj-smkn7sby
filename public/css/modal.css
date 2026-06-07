@@ -86,3 +86,19 @@
 .modal-add-data-detail .modal-title i {
     margin-right: 13px;
 }
+
+@media (max-width: 768px) {
+    .modal-body {
+        padding: 16px 16px 0 !important;
+    }
+
+    .modal-footer{
+        padding: 14px 16px 16px !important;
+    }
+
+    .card-modal-edit{
+        padding: 9px 16px 14px;
+    }
+
+  
+}

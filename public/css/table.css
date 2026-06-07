@@ -80,7 +80,7 @@
 
 @media (max-width: 768px) {
     table.dataTable thead th {
-        padding: 8px !important;
+        padding: 9px !important;
         font-size: 11.5px !important;
     }
 

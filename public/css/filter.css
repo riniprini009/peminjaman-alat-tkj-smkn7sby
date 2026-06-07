@@ -160,6 +160,7 @@
 
 .modal-footer {
     border: none;
+    padding: 12px 20px 20px;
 }
 
 .filter-card:hover .filter-icon {
@@ -225,7 +226,9 @@
     }
 
     .modal-footer {
-        padding-top: 0;
+        padding-bottom: 16px;
+        padding-top: 14px;
+        
     }
 
     .modal-body {
@@ -252,6 +255,6 @@
     height: 41px;
 }
 
-.btn-universal {
+/* .btn-universal {
     height: 41px !important;
-}
+} */
