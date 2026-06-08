@@ -132,6 +132,7 @@ class AkunUserController extends Controller
 
     public function updateUsernameProfile(Request $request, $idAkunUser)
     {
+        // dd(($request->all()));
         $request->validate([
             'username_baru' => 'required',
             'conf_username' => 'required|same:username_baru',
@@ -141,7 +142,7 @@ class AkunUserController extends Controller
             $akun = AkunUser::findOrFail($idAkunUser);
 
             $akun->update([
-                'username' => $request->username
+                'username' => $request->username_baru
             ]);
 
             return redirect()
